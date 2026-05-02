@@ -36,7 +36,7 @@ export function ConsultantProfile() {
 
             <h2
               id="consultant-heading"
-              className="mt-6 text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+              className="mt-6 text-balance font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
               Francisco Fernández
             </h2>

@@ -47,8 +47,6 @@ export function Navbar() {
             href={APP_URL}
             variant="secondary"
             size="default"
-            target="_blank"
-            rel="noopener noreferrer"
             className="hidden md:inline-flex"
           >
             Iniciar Sesión
@@ -98,8 +96,6 @@ export function Navbar() {
               href={APP_URL}
               variant="secondary"
               size="default"
-              target="_blank"
-              rel="noopener noreferrer"
               className="mt-2 w-full md:hidden"
               onClick={() => setOpen(false)}
             >

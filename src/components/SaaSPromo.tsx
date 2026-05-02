@@ -16,7 +16,7 @@ export function SaaSPromo() {
           </span>
           <h2
             id="saas-promo-heading"
-            className="mt-6 text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+            className="mt-6 text-balance font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
           >
             El Termómetro Exacto de tu Talento
           </h2>
@@ -27,7 +27,7 @@ export function SaaSPromo() {
             crítico abandone la operación.
           </p>
           <div className="mt-8">
-            <ButtonLink href={APP_URL} variant="primary" size="lg" target="_blank" rel="noopener noreferrer">
+            <ButtonLink href={APP_URL} variant="primary" size="lg">
               Descubrir Obrii App →
             </ButtonLink>
           </div>

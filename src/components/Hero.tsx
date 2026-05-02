@@ -1,17 +1,51 @@
 import { ButtonLink } from "@/components/ui/button";
 
+function HeroGridPattern() {
+  return (
+    <div
+      className="pointer-events-none absolute inset-0 -z-10 opacity-[0.04]"
+      aria-hidden
+    >
+      <svg
+        className="h-full w-full text-foreground"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+      >
+        <defs>
+          <pattern
+            id="hero-grid"
+            width="40"
+            height="40"
+            patternUnits="userSpaceOnUse"
+          >
+            <path
+              d="M 40 0 L 0 0 0 40"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+            />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hero-grid)" />
+      </svg>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/40" />
+    </div>
+  );
+}
+
 export function Hero() {
   return (
     <section
       id="contacto"
-      className="w-full px-6 py-24 sm:px-10 sm:py-28 md:py-32 lg:px-12 lg:py-40"
+      className="relative isolate w-full overflow-hidden px-6 py-24 sm:px-10 sm:py-28 md:py-32 lg:px-12 lg:py-40"
     >
-      <div className="mx-auto flex max-w-3xl flex-col items-center text-center lg:max-w-4xl">
+      <HeroGridPattern />
+      <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center lg:max-w-4xl">
         <span className="inline-flex items-center rounded-full border border-border/70 bg-background/80 px-4 py-1.5 text-xs font-medium tracking-wide text-foreground/80">
           Consultoría Boutique en Chile
         </span>
 
-        <h1 className="mt-8 text-balance text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-5xl lg:text-6xl lg:leading-[1.1]">
+        <h1 className="mt-8 text-balance font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-5xl lg:text-6xl lg:leading-[1.1]">
           Asegura el Talento Crítico para tu Operación B2B
         </h1>
 

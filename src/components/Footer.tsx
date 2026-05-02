@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ButtonLink } from "@/components/ui/button";
 import { AGENDAR_ASESORIA_URL, CONTACT_EMAIL } from "@/lib/site";
 
-const LINKEDIN_HREF = "https://www.linkedin.com/in/franciscofernandez";
+const LINKEDIN_HREF = "https://www.linkedin.com/company/obrii-consulting/";
 
 const linkClass =
   "text-zinc-400 underline-offset-4 transition-colors hover:text-primary hover:underline";

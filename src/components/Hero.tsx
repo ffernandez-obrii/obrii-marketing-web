@@ -45,7 +45,7 @@ export function Hero() {
           Consultoría Boutique en Chile
         </span>
 
-        <h1 className="mt-8 text-balance font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-5xl lg:text-6xl lg:leading-[1.1]">
+        <h1 className="mt-8 text-balance font-serif text-4xl font-semibold tracking-tight text-primary sm:text-5xl md:text-5xl lg:text-6xl lg:leading-[1.1] [text-shadow:0_0_0_1px_hsl(var(--primary)/0.28),0_14px_50px_-18px_hsl(var(--primary)/0.45)]">
           Asegura el Talento Crítico para tu Operación B2B
         </h1>
 

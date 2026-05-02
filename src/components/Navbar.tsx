@@ -26,7 +26,7 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6 lg:px-12">
         <Link
           href="/"
-          className="shrink-0 text-base font-semibold tracking-tight text-foreground"
+          className="shrink-0 text-base font-semibold tracking-tight text-primary transition-colors hover:text-primary/90"
         >
           Obrii Consulting
         </Link>

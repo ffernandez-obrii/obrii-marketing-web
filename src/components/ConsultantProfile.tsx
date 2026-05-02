@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import Image from "next/image";
 
 const highlights = [
   "Rigor Metodológico (Entrevistas STAR)",
@@ -52,21 +53,15 @@ export function ConsultantProfile() {
             </ul>
           </div>
 
-          <div>
-            <div
-              className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-[1rem] border border-border/60 bg-muted/50 backdrop-blur-sm md:max-w-none"
-              aria-hidden
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.07] via-transparent to-muted/80" />
-              <div className="relative flex h-full min-h-[12rem] flex-col items-center justify-center gap-2 px-8 text-center sm:min-h-0">
-                <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
-                  Retrato profesional
-                </span>
-                <span className="max-w-[12rem] text-sm leading-snug text-foreground/50">
-                  Imagen del fundador (próximamente)
-                </span>
-              </div>
-            </div>
+          <div className="flex justify-center md:justify-end">
+            <Image
+              src="/_CVA7492.JPG"
+              width={500}
+              height={500}
+              alt="Francisco Fernández - Psicólogo Consultor"
+              className="aspect-square h-auto w-full max-w-[500px] rounded-[1rem] border border-border/60 object-cover shadow-lg"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
         </div>
       </div>

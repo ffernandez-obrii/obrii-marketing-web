@@ -23,7 +23,7 @@ export function SaaSPromo() {
           </span>
           <h2
             id="saas-promo-heading"
-            className="mt-6 text-balance font-sans text-3xl font-semibold tracking-tight text-white sm:text-4xl"
+            className="mt-6 text-balance font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl"
           >
             El Termómetro Exacto de tu Talento
           </h2>

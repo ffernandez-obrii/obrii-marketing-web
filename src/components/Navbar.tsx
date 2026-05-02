@@ -39,7 +39,7 @@ export function Navbar() {
             priority
             aria-hidden
           />
-          <span className="truncate text-base font-semibold tracking-tight text-primary sm:text-lg">
+          <span className="truncate text-base font-bold tracking-tight text-primary sm:text-lg">
             Obrii Consulting
           </span>
         </Link>

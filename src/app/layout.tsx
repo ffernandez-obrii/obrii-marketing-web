@@ -11,6 +11,10 @@ const defaultTitle =
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://obriiconsulting.com"),
+  icons: {
+    icon: [{ url: "/logo.png", type: "image/png" }],
+    apple: [{ url: "/logo.png", type: "image/png" }],
+  },
   title: {
     default: defaultTitle,
     template: "%s | Obrii Consulting",

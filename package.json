@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "sync:favicon": "node scripts/sync-favicon.js",
-    "prebuild": "npm run sync:favicon",
-    "dev": "npm run sync:favicon && next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

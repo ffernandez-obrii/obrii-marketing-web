@@ -17,6 +17,10 @@
 /.next/
 /out/
 
+# generated from public/logo.png (see scripts/sync-favicon.js)
+/src/app/icon.png
+/src/app/apple-icon.png
+
 # production
 /build
 

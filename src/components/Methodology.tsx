@@ -25,7 +25,7 @@ export function Methodology() {
       <div className="mx-auto max-w-6xl px-6 lg:px-12">
         <h2
           id="methodology-heading"
-          className="mx-auto max-w-3xl text-center font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+          className="mx-auto max-w-3xl text-center font-sans text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
         >
           Evaluación Psicolaboral de Alto Estándar
         </h2>

@@ -1,4 +1,9 @@
 @import "tailwindcss";
+@import "@fontsource/aileron/latin-300.css";
+@import "@fontsource/aileron/latin-400.css";
+@import "@fontsource/aileron/latin-600.css";
+@import "@fontsource/aileron/latin-700.css";
+@import "@fontsource/aileron/latin-800.css";
 
 :root {
   --background: 0 0% 98%;
@@ -73,10 +78,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif,
+  --font-sans: "Aileron", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-serif: var(--font-lora), ui-serif, Georgia, Cambria, "Times New Roman",
-    Times, serif;
 }
 
 body {

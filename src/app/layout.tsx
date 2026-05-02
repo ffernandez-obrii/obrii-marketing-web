@@ -8,9 +8,24 @@ const inter = Inter({
   display: "swap",
 });
 
+const siteDescription =
+  "Consultoría boutique en Chile liderada por Francisco Fernández. Evaluación psicológica y Headhunting especializado para mitigar el riesgo operativo en Minería, Energía y Tecnología.";
+
+const defaultTitle =
+  "Obrii Consulting | Headhunting B2B & Evaluación Psicolaboral";
+
 export const metadata: Metadata = {
-  title: "Obrii Marketing",
-  description: "Sitio de marketing",
+  title: {
+    default: defaultTitle,
+    template: "%s | Obrii Consulting",
+  },
+  description: siteDescription,
+  openGraph: {
+    title: defaultTitle,
+    description: siteDescription,
+    locale: "es_CL",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

@@ -1,5 +1,18 @@
 import { Check } from "lucide-react";
+import fs from "node:fs";
+import path from "node:path";
 import Image from "next/image";
+
+const profileImageSrc = (() => {
+  const pub = path.join(process.cwd(), "public");
+  if (fs.existsSync(path.join(pub, "francisco-perfil.jpg"))) {
+    return "/francisco-perfil.jpg";
+  }
+  if (fs.existsSync(path.join(pub, "_CVA7492.JPG"))) {
+    return "/_CVA7492.JPG";
+  }
+  return "/_CVA7492.JPG";
+})();
 
 const highlights = [
   "Rigor Metodológico (Entrevistas STAR)",
@@ -55,7 +68,7 @@ export function ConsultantProfile() {
 
           <div className="flex justify-center md:justify-end">
             <Image
-              src="/_CVA7492.JPG"
+              src={profileImageSrc}
               width={500}
               height={500}
               alt="Francisco Fernández - Psicólogo Consultor"

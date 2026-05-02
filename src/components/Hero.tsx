@@ -1,4 +1,5 @@
 import { ButtonLink } from "@/components/ui/button";
+import { AGENDAR_ASESORIA_URL, CONTACT_EMAIL } from "@/lib/site";
 
 function HeroGridPattern() {
   return (
@@ -37,7 +38,7 @@ export function Hero() {
   return (
     <section
       id="contacto"
-      className="relative isolate w-full overflow-hidden px-6 py-24 sm:px-10 sm:py-28 md:py-32 lg:px-12 lg:py-40"
+      className="relative isolate w-full overflow-hidden px-6 pb-24 pt-10 sm:px-10 sm:pb-28 sm:pt-12 md:pb-32 md:pt-14 lg:px-12 lg:pb-40 lg:pt-16"
     >
       <HeroGridPattern />
       <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center lg:max-w-4xl">
@@ -57,16 +58,11 @@ export function Hero() {
 
         <div className="mt-12 flex w-full flex-col items-stretch justify-center gap-4 sm:mt-14 sm:w-auto sm:flex-row sm:items-center">
           <ButtonLink
-            href={
-              process.env.NEXT_PUBLIC_AGENDAR_ASESORIA_URL ?? "#contacto"
-            }
+            href={AGENDAR_ASESORIA_URL}
             variant="primary"
             size="lg"
-            {...((process.env.NEXT_PUBLIC_AGENDAR_ASESORIA_URL ?? "").startsWith(
-              "http",
-            )
-              ? { target: "_blank", rel: "noopener noreferrer" }
-              : {})}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Agendar Asesoría
           </ButtonLink>
@@ -74,6 +70,16 @@ export function Hero() {
             Nuestros Servicios
           </ButtonLink>
         </div>
+
+        <p className="mt-8 text-xs text-foreground/45 sm:text-sm">
+          <span className="text-foreground/35">Contacto:</span>{" "}
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="font-medium text-foreground/55 underline-offset-2 transition-colors hover:text-primary hover:underline"
+          >
+            {CONTACT_EMAIL}
+          </a>
+        </p>
       </div>
     </section>
   );

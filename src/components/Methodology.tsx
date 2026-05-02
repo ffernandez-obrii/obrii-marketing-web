@@ -1,27 +1,59 @@
-const pillars = [
+import type { LucideIcon } from "lucide-react";
+import type { ReactNode } from "react";
+import { Bot, BrainCircuit, Target } from "lucide-react";
+
+const pillars: readonly {
+  title: string;
+  description: string;
+  Icon: LucideIcon;
+}[] = [
   {
     title: "Entrevistas STAR",
     description:
       "Exploración profunda de comportamientos pasados para predecir el desempeño futuro con precisión.",
+    Icon: Target,
   },
   {
     title: "Batería Psicométrica",
     description:
       "Triangulación de datos usando 3 tests estandarizados para evaluar personalidad, lógica y competencias críticas.",
+    Icon: BrainCircuit,
   },
   {
     title: "Auditoría de IA",
     description:
       "Revisión algorítmica del proceso para garantizar cero sesgos y una objetividad total en el informe final.",
+    Icon: Bot,
   },
-] as const;
+];
+
+function BentoCard({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <article
+      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border/40 bg-muted/50 p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-xl transition-[transform,border-color,box-shadow] duration-300 motion-safe:hover:-translate-y-1 hover:border-primary/30 motion-safe:hover:shadow-[0_24px_48px_-28px_hsl(var(--primary)/0.18)] sm:p-8 ${className}`}
+    >
+      <div
+        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(ellipse_90%_75%_at_50%_-15%,rgba(255,255,255,0.09),transparent_58%),radial-gradient(ellipse_70%_50%_at_100%_100%,hsl(var(--primary)/0.06),transparent_55%)]"
+        aria-hidden
+      />
+      <div className="relative z-10 flex h-full flex-col">{children}</div>
+    </article>
+  );
+}
 
 export function Methodology() {
   const [featured, ...rest] = pillars;
+  const FeaturedIcon = featured.Icon;
 
   return (
     <section
-      className="border-y border-border/40 bg-background py-16 sm:py-20"
+      className="border-y border-border/40 bg-background py-20 md:py-28 lg:py-32"
       aria-labelledby="methodology-heading"
     >
       <div className="mx-auto max-w-6xl px-6 lg:px-12">
@@ -32,29 +64,42 @@ export function Methodology() {
           Evaluación Psicolaboral de Alto Estándar
         </h2>
 
-        <ul className="mt-12 grid auto-rows-fr grid-cols-1 gap-4 md:mt-14 md:grid-cols-3 md:grid-rows-2 md:gap-5">
+        <ul className="mt-14 grid auto-rows-fr grid-cols-1 gap-5 md:mt-16 md:grid-cols-3 md:grid-rows-2 md:gap-6">
           <li className="md:col-span-2 md:row-span-2">
-            <article className="flex h-full min-h-[280px] flex-col rounded-2xl border border-border/40 bg-muted/50 p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-xl sm:p-8 md:min-h-0 md:p-10">
+            <BentoCard className="min-h-[280px] md:min-h-0 md:p-10">
+              <FeaturedIcon
+                className="mb-6 size-10 shrink-0 text-primary/80"
+                strokeWidth={1.25}
+                aria-hidden
+              />
               <h3 className="text-lg font-semibold tracking-tight text-foreground sm:text-xl">
                 {featured.title}
               </h3>
               <p className="mt-4 max-w-xl flex-1 text-sm leading-relaxed text-muted-foreground sm:text-base md:mt-6">
                 {featured.description}
               </p>
-            </article>
+            </BentoCard>
           </li>
-          {rest.map((item) => (
-            <li key={item.title} className="md:col-span-1 md:row-span-1">
-              <article className="flex h-full flex-col rounded-2xl border border-border/40 bg-muted/50 p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-xl sm:p-8">
-                <h3 className="text-lg font-semibold tracking-tight text-foreground">
-                  {item.title}
-                </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  {item.description}
-                </p>
-              </article>
-            </li>
-          ))}
+          {rest.map((item) => {
+            const { Icon } = item;
+            return (
+              <li key={item.title} className="md:col-span-1 md:row-span-1">
+                <BentoCard>
+                  <Icon
+                    className="mb-6 size-10 shrink-0 text-primary/80"
+                    strokeWidth={1.25}
+                    aria-hidden
+                  />
+                  <h3 className="text-lg font-semibold tracking-tight text-foreground">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    {item.description}
+                  </p>
+                </BentoCard>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>

@@ -7,7 +7,7 @@ export function SaaSPromo() {
   return (
     <section
       id="obrii-app"
-      className="relative isolate w-full overflow-hidden bg-zinc-950 px-6 py-20 text-zinc-50 sm:px-10 md:py-28 lg:px-12"
+      className="relative isolate w-full overflow-hidden bg-zinc-950 px-6 py-24 text-zinc-50 sm:px-10 md:py-28 lg:px-12 lg:py-32"
       aria-labelledby="saas-promo-heading"
     >
       <div
@@ -23,7 +23,7 @@ export function SaaSPromo() {
           </span>
           <h2
             id="saas-promo-heading"
-            className="mt-6 text-balance font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl"
+            className="mt-6 block max-w-xl bg-gradient-to-b from-white to-white/60 bg-clip-text pb-[0.08em] font-sans text-3xl font-bold tracking-tight text-transparent text-balance sm:max-w-2xl sm:text-4xl"
           >
             El Termómetro Exacto de tu Talento
           </h2>

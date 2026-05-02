@@ -23,6 +23,7 @@ const highlights = [
 export function ConsultantProfile() {
   return (
     <section
+      id="consultor"
       className="w-full px-6 py-20 sm:px-10 md:py-28 lg:px-12"
       aria-labelledby="consultant-heading"
     >

@@ -1,5 +1,5 @@
 const cardClass =
-  "p-8 rounded-[1rem] border border-border/60 bg-card/60 backdrop-blur-sm hover:shadow-[0_0_0_1px_hsl(var(--primary)/0.2),0_10px_30px_-14px_hsl(var(--primary)/0.3)] transition-all";
+  "p-8 rounded-xl border border-border/60 bg-card/60 backdrop-blur shadow-[0_0_0_1px_hsl(var(--border)/0.5),0_20px_40px_-28px_hsl(var(--ring)/0.6)] transition-shadow hover:shadow-[0_0_0_1px_hsl(var(--border)/0.55),0_24px_48px_-28px_hsl(var(--ring)/0.65)]";
 
 const services = [
   {
@@ -22,6 +22,7 @@ const services = [
 export function Services() {
   return (
     <section
+      id="servicios"
       className="w-full px-6 py-20 sm:px-10 md:py-28 lg:px-12"
       aria-labelledby="services-heading"
     >

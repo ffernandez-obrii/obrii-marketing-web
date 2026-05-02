@@ -1,3 +1,4 @@
+import { ConsultantProfile } from "@/components/ConsultantProfile";
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
 
@@ -6,6 +7,7 @@ export default function Home() {
     <main className="flex flex-1 flex-col">
       <Hero />
       <Services />
+      <ConsultantProfile />
     </main>
   );
 }

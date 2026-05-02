@@ -1,5 +1,5 @@
 const LINKEDIN_HREF = "https://www.linkedin.com/in/franciscofernandez";
-const CONTACT_EMAIL = "contacto@obriiconsulting.com";
+const CONTACT_EMAIL = "ffernandez@obriiconsulting.com";
 
 const linkClass =
   "text-foreground/55 underline-offset-4 transition-colors hover:text-primary hover:underline";

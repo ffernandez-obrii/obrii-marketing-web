@@ -27,17 +27,21 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6 lg:px-12">
         <Link
           href="/"
-          className="relative flex h-10 w-[120px] shrink-0 items-center transition-opacity hover:opacity-90"
+          className="flex min-w-0 shrink-0 items-center gap-2.5 transition-opacity hover:opacity-90 sm:gap-3"
           aria-label="Obrii Consulting — inicio"
         >
           <Image
             src="/logo.png"
-            alt="Logo Obrii Consulting"
+            alt=""
             width={120}
             height={40}
-            className="h-10 w-auto object-contain object-left"
+            className="h-9 w-auto shrink-0 object-contain object-left sm:h-10"
             priority
+            aria-hidden
           />
+          <span className="truncate text-base font-semibold tracking-tight text-primary sm:text-lg">
+            Obrii Consulting
+          </span>
         </Link>
 
         <nav

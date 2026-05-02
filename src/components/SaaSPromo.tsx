@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ButtonLink } from "@/components/ui/button";
 
 const APP_URL = "https://app.obriiconsulting.com";
@@ -33,17 +34,16 @@ export function SaaSPromo() {
           </div>
         </div>
 
-        <div
-          className="relative aspect-video overflow-hidden rounded-xl border border-border/60 bg-card/60 shadow-[0_0_0_1px_hsl(var(--border)/0.5),0_20px_40px_-28px_hsl(var(--ring)/0.6)] backdrop-blur"
-          aria-hidden
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/25 via-background/40 to-accent/20" />
-          <div className="relative flex h-full items-center justify-center p-8">
-            <span className="text-sm font-medium text-muted-foreground">
-              Vista previa del dashboard
-            </span>
-          </div>
-        </div>
+        <figure className="relative mx-auto aspect-video w-full max-w-3xl overflow-hidden rounded-[1rem] border border-border/60 shadow-xl md:mx-0 md:max-w-none">
+          <Image
+            src="/dashboard-obrii.png"
+            alt="Dashboard Obrii App"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
+            priority={false}
+          />
+        </figure>
       </div>
     </section>
   );

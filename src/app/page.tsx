@@ -1,6 +1,7 @@
 import { ConsultantProfile } from "@/components/ConsultantProfile";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
+import { Methodology } from "@/components/Methodology";
 import { Navbar } from "@/components/Navbar";
 import { SaaSPromo } from "@/components/SaaSPromo";
 import { Services } from "@/components/Services";
@@ -15,6 +16,7 @@ export default function Home() {
         <TrustBanner />
         <SaaSPromo />
         <Services />
+        <Methodology />
         <ConsultantProfile />
         <Footer />
       </main>

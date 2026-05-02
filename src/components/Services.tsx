@@ -1,16 +1,18 @@
+import { ButtonLink } from "@/components/ui/button";
+
 const cardClass =
   "p-8 rounded-xl border border-border/60 bg-card/60 backdrop-blur shadow-[0_0_0_1px_hsl(var(--border)/0.5),0_20px_40px_-28px_hsl(var(--ring)/0.6)] transition-shadow hover:shadow-[0_0_0_1px_hsl(var(--border)/0.55),0_24px_48px_-28px_hsl(var(--ring)/0.65)]";
 
 const services = [
   {
-    title: "Atracción de Talento",
-    description:
-      "Gestionamos el ciclo completo de búsqueda y evaluación para perfiles críticos, asegurando calidad metodológica y garantía de permanencia.",
-  },
-  {
     title: "Evaluación Psicolaboral",
     description:
-      "Validamos a sus candidatos finalistas mediante entrevistas estructuradas STAR + tres tests psicométricos y auditoría de IA para una objetividad total.",
+      "Validación rigurosa de candidatos finalistas por competencias: decisión objetiva, defendible ante dirección y con trazabilidad metodológica completa.",
+  },
+  {
+    title: "Atracción de Talento y Headhunting",
+    description:
+      "Ciclo completo de búsqueda y selección para perfiles críticos, con garantía de permanencia y el mismo estándar de rigor en cada etapa.",
   },
   {
     title: "Obrii App (SaaS)",
@@ -35,8 +37,8 @@ export function Services() {
             Soluciones a Medida para tu Escala
           </h2>
           <p className="mt-5 text-pretty text-base leading-relaxed text-foreground/70 sm:text-lg">
-            Desde diagnósticos automatizados en la nube hasta consultoría de
-            alto nivel para roles críticos.
+            Evaluación por competencias y rigor metodológico para roles que no
+            pueden fallar — más tecnología cuando tu operación necesita escala.
           </p>
         </header>
 
@@ -54,6 +56,19 @@ export function Services() {
             </li>
           ))}
         </ul>
+
+        <div className="mt-12 flex justify-center md:mt-14">
+          <ButtonLink
+            href="/informe-ejemplo.pdf"
+            variant="secondary"
+            size="lg"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ver ejemplo de informe anonimizado en PDF"
+          >
+            📄 Ver ejemplo de informe (anonimizado)
+          </ButtonLink>
+        </div>
       </div>
     </section>
   );

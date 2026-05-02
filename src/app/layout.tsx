@@ -27,6 +27,10 @@ export const metadata: Metadata = {
     template: "%s | Obrii Consulting",
   },
   description: siteDescription,
+  icons: {
+    icon: [{ url: "/logo.png", type: "image/png" }],
+    apple: [{ url: "/logo.png", type: "image/png" }],
+  },
   openGraph: {
     title: defaultTitle,
     description: siteDescription,

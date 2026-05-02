@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ButtonLink } from "@/components/ui/button";
@@ -26,9 +27,17 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6 lg:px-12">
         <Link
           href="/"
-          className="shrink-0 text-base font-semibold tracking-tight text-primary transition-colors hover:text-primary/90"
+          className="relative flex h-10 w-[120px] shrink-0 items-center transition-opacity hover:opacity-90"
+          aria-label="Obrii Consulting — inicio"
         >
-          Obrii Consulting
+          <Image
+            src="/logo.png"
+            alt="Logo Obrii Consulting"
+            width={120}
+            height={40}
+            className="h-10 w-auto object-contain object-left"
+            priority
+          />
         </Link>
 
         <nav

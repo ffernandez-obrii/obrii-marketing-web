@@ -3,23 +3,31 @@ import { ButtonLink } from "@/components/ui/button";
 const cardClass =
   "p-8 rounded-xl border border-border/60 bg-card/60 backdrop-blur shadow-[0_0_0_1px_hsl(var(--border)/0.5),0_20px_40px_-28px_hsl(var(--ring)/0.6)] transition-shadow hover:shadow-[0_0_0_1px_hsl(var(--border)/0.55),0_24px_48px_-28px_hsl(var(--ring)/0.65)]";
 
-const services = [
+type ServiceItem = {
+  title: string;
+  description: string;
+  detailPdf?: "/propuesta-evaluacion.pdf" | "/propuesta-atraccion-talento.pdf";
+};
+
+const services: ServiceItem[] = [
   {
     title: "Evaluación Psicolaboral",
     description:
       "Validación rigurosa de candidatos finalistas por competencias: decisión objetiva, defendible ante dirección y con trazabilidad metodológica completa.",
+    detailPdf: "/propuesta-evaluacion.pdf",
   },
   {
     title: "Atracción de Talento y Headhunting",
     description:
       "Ciclo completo de búsqueda y selección para perfiles críticos, con garantía de permanencia y el mismo estándar de rigor en cada etapa.",
+    detailPdf: "/propuesta-atraccion-talento.pdf",
   },
   {
     title: "Obrii App (SaaS)",
     description:
       "El termómetro de tu empresa. Plataforma transaccional y autogestionada para medir fit cultural, burnout y competencias técnicas al instante.",
   },
-] as const;
+];
 
 export function Services() {
   return (
@@ -52,6 +60,19 @@ export function Services() {
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-foreground/75 sm:text-base">
                   {item.description}
                 </p>
+                {item.detailPdf ? (
+                  <ButtonLink
+                    href={item.detailPdf}
+                    variant="secondary"
+                    size="default"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 w-full"
+                    aria-label={`Descargar detalle del servicio: ${item.title}`}
+                  >
+                    📥 Descargar Detalle del Servicio
+                  </ButtonLink>
+                ) : null}
               </article>
             </li>
           ))}

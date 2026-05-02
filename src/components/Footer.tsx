@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 const LINKEDIN_HREF = "https://www.linkedin.com/in/franciscofernandez";
 const CONTACT_EMAIL = "ffernandez@obriiconsulting.com";
 
@@ -8,29 +11,45 @@ export function Footer() {
   return (
     <footer className="border-t border-border/40">
       <div className="mx-auto max-w-6xl px-6 py-10 sm:py-12">
-        <p className="flex flex-col items-center gap-3 text-center text-sm text-muted-foreground sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-3 sm:gap-y-2">
-          <span className="text-pretty">
-            © 2026 Obrii Consulting. Francisco Fernández. Todos los derechos
-            reservados.
-          </span>
-          <span className="hidden text-foreground/30 sm:inline" aria-hidden>
-            ·
-          </span>
-          <a
-            href={LINKEDIN_HREF}
-            className={linkClass}
-            target="_blank"
-            rel="noopener noreferrer"
+        <div className="flex flex-col items-center gap-8">
+          <Link
+            href="/"
+            className="relative flex h-11 w-[132px] items-center opacity-90 transition-opacity hover:opacity-100"
+            aria-label="Obrii Consulting — inicio"
           >
-            LinkedIn
-          </a>
-          <span className="hidden text-foreground/30 sm:inline" aria-hidden>
-            ·
-          </span>
-          <a href={`mailto:${CONTACT_EMAIL}`} className={linkClass}>
-            {CONTACT_EMAIL}
-          </a>
-        </p>
+            <Image
+              src="/logo.png"
+              alt="Logo Obrii Consulting"
+              width={132}
+              height={44}
+              className="h-11 w-auto object-contain"
+            />
+          </Link>
+
+          <p className="flex flex-col items-center gap-3 text-center text-sm text-muted-foreground sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-3 sm:gap-y-2">
+            <span className="text-pretty">
+              © 2026 Obrii Consulting. Francisco Fernández. Todos los derechos
+              reservados.
+            </span>
+            <span className="hidden text-foreground/30 sm:inline" aria-hidden>
+              ·
+            </span>
+            <a
+              href={LINKEDIN_HREF}
+              className={linkClass}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+            <span className="hidden text-foreground/30 sm:inline" aria-hidden>
+              ·
+            </span>
+            <a href={`mailto:${CONTACT_EMAIL}`} className={linkClass}>
+              {CONTACT_EMAIL}
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );

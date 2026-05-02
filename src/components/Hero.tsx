@@ -42,7 +42,7 @@ export function Hero() {
       <HeroGridPattern />
       <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center lg:max-w-4xl">
         <span className="inline-flex items-center rounded-full border border-border/70 bg-background/80 px-4 py-1.5 text-xs font-medium tracking-wide text-foreground/80">
-          Consultoría Boutique en Chile
+          Ps. Francisco Fernández, consultor profesional
         </span>
 
         <h1 className="mt-8 text-balance font-serif text-4xl font-semibold tracking-tight text-primary sm:text-5xl md:text-5xl lg:text-6xl lg:leading-[1.1] [text-shadow:0_0_0_1px_hsl(var(--primary)/0.28),0_14px_50px_-18px_hsl(var(--primary)/0.45)]">

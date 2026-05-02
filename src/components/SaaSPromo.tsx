@@ -36,7 +36,7 @@ export function SaaSPromo() {
 
         <figure className="mx-auto w-full max-w-3xl overflow-hidden rounded-[1rem] border border-border/60 shadow-xl md:mx-0 md:max-w-none">
           <Image
-            src="/dashboard-obrii.png"
+            src="/dashboard-obrii.jpg"
             alt="Dashboard Obrii App"
             width={1600}
             height={900}

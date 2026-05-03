@@ -1,6 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
-import { Bot, BrainCircuit, Target } from "lucide-react";
+import { Bot, BrainCircuit, Target, Workflow, Video, FileText } from "lucide-react";
 
 const pillars: readonly {
   title: string;
@@ -10,20 +10,38 @@ const pillars: readonly {
   {
     title: "Entrevistas STAR",
     description:
-      "Exploración profunda de comportamientos pasados para predecir el desempeño futuro con precisión.",
+      "Evaluación por competencias de alto estándar para explorar comportamientos pasados y predecir el desempeño futuro.",
     Icon: Target,
   },
   {
-    title: "Batería Psicométrica",
+    title: "Flexibilidad Metodológica",
     description:
-      "Triangulación de datos usando 3 tests estandarizados para evaluar personalidad, lógica y competencias críticas.",
+      "Trabajamos con el Diccionario de Competencias de Martha Alles o nos integramos y adaptamos al modelo propio de su organización.",
+    Icon: Workflow,
+  },
+  {
+    title: "Batería de Evaluación",
+    description:
+      "Triangulación de datos midiendo: 1. Comunicación, 2. Resolución de Problemas, 3. Modelo Big 5 (Personalidad) y 4. Gestión del Tiempo.",
     Icon: BrainCircuit,
+  },
+  {
+    title: "Registro y Transparencia",
+    description:
+      "La sesión es capturada mediante herramientas de transcripción de última generación para garantizar la trazabilidad de la información.",
+    Icon: Video,
   },
   {
     title: "Auditoría de IA",
     description:
-      "Revisión algorítmica del proceso para garantizar cero sesgos y una objetividad total en el informe final.",
+      "Inteligencia Artificial que audita y objetiva el proceso para eliminar sesgos y elevar la calidad de la decisión humana.",
     Icon: Bot,
+  },
+  {
+    title: "Reportes Técnicos",
+    description:
+      "Entrega de informes detallados con análisis predictivo de ajuste al cargo y recomendaciones claras de contratación.",
+    Icon: FileText,
   },
 ];
 
@@ -48,9 +66,6 @@ function BentoCard({
 }
 
 export function Methodology() {
-  const [featured, ...rest] = pillars;
-  const FeaturedIcon = featured.Icon;
-
   return (
     <section
       className="relative isolate w-full overflow-hidden border-y border-white/[0.08] bg-zinc-950 px-6 py-20 text-zinc-50 sm:px-10 md:py-28 lg:px-12 lg:py-32"
@@ -72,27 +87,15 @@ export function Methodology() {
         >
           Evaluación Psicolaboral de Alto Estándar
         </h2>
+        <p className="mx-auto mt-6 max-w-2xl text-center text-zinc-400">
+          Diseñado para cuando ya cuenta con candidatos finalistas y requiere una validación experta, objetiva y profesional antes de tomar la decisión final. Devolución de informe psicolaboral en un máximo de 72 horas.
+        </p>
 
-        <ul className="mt-14 grid auto-rows-fr grid-cols-1 gap-5 md:mt-16 md:grid-cols-3 md:grid-rows-2 md:gap-6">
-          <li className="md:col-span-2 md:row-span-2">
-            <BentoCard className="min-h-[280px] md:min-h-0 md:p-10">
-              <FeaturedIcon
-                className="mb-6 size-10 shrink-0 text-sky-400/85"
-                strokeWidth={1.25}
-                aria-hidden
-              />
-              <h3 className="text-lg font-semibold tracking-tight text-white sm:text-xl">
-                {featured.title}
-              </h3>
-              <p className="mt-4 max-w-xl flex-1 text-sm leading-relaxed text-zinc-400 sm:text-base md:mt-6">
-                {featured.description}
-              </p>
-            </BentoCard>
-          </li>
-          {rest.map((item) => {
+        <ul className="mt-14 grid auto-rows-fr grid-cols-1 gap-5 md:mt-16 md:grid-cols-2 lg:grid-cols-3 md:gap-6">
+          {pillars.map((item) => {
             const { Icon } = item;
             return (
-              <li key={item.title} className="md:col-span-1 md:row-span-1">
+              <li key={item.title}>
                 <BentoCard>
                   <Icon
                     className="mb-6 size-10 shrink-0 text-sky-400/85"
@@ -110,6 +113,18 @@ export function Methodology() {
             );
           })}
         </ul>
+
+        <div className="mt-12 flex justify-center">
+          <a
+            href="/informe-ejemplo.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-6 py-3 mt-10 rounded-full border border-zinc-300 bg-white text-zinc-800 font-medium hover:bg-zinc-50 hover:border-zinc-400 transition-all shadow-sm"
+          >
+            <FileText className="mr-2 h-4 w-4" />
+            Ver ejemplo de informe (anonimizado)
+          </a>
+        </div>
       </div>
     </section>
   );

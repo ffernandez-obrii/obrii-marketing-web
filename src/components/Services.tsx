@@ -73,18 +73,7 @@ export function Services() {
           ))}
         </ul>
 
-        <div className="mt-12 flex justify-center md:mt-14">
-          <ButtonLink
-            href="/informe-ejemplo.pdf"
-            variant="secondary"
-            size="lg"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Ver ejemplo de informe anonimizado en PDF"
-          >
-            Ver ejemplo de informe (anonimizado)
-          </ButtonLink>
-        </div>
+
       </div>
     </section>
   );

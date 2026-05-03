@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: ["/dashboard-obrii.jpg"],
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
+  },
 };
 
 export default function RootLayout({

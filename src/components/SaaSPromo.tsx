@@ -1,4 +1,4 @@
-
+import { ExpandableVideo } from "@/components/ui/ExpandableVideo";
 import { ButtonLink } from "@/components/ui/button";
 
 const APP_URL = "https://app.obriiconsulting.com";
@@ -49,16 +49,14 @@ export function SaaSPromo() {
         <figure className="relative mx-auto w-full max-w-3xl md:mx-0 md:max-w-none">
           <div className="rounded-2xl border border-white/[0.09] bg-zinc-900/40 p-[3px] shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_0_56px_-8px_hsl(var(--primary)/0.42),0_24px_64px_-28px_rgba(0,0,0,0.85)] ring-1 ring-sky-400/15">
             <div className="overflow-hidden rounded-[calc(1rem-2px)] ring-1 ring-white/[0.06]">
-              <video
+              <ExpandableVideo
                 src="/obrii-demo.mp4"
                 autoPlay
                 loop
                 muted
                 playsInline
                 className="w-full h-auto rounded-xl border border-zinc-800 shadow-2xl aspect-video object-cover object-left-top"
-              >
-                Tu navegador no soporta la reproducción de video.
-              </video>
+              />
             </div>
           </div>
         </figure>

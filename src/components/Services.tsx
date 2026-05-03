@@ -33,7 +33,7 @@ export function Services() {
         <header className="mx-auto max-w-3xl text-center">
           <h2
             id="services-heading"
-            className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+            className="text-balance text-3xl font-semibold tracking-tight text-primary sm:text-4xl"
           >
             Soluciones a Medida para tu Escala
           </h2>
@@ -47,7 +47,7 @@ export function Services() {
           {services.map((item) => (
             <li key={item.title}>
               <article className="flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-xl">
-                <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-indigo-600">
+                <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-primary">
                   Servicio Core
                 </span>
                 <h3 className="text-lg font-semibold tracking-tight text-zinc-900">
@@ -61,7 +61,7 @@ export function Services() {
                     href={item.detailPdf}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-6 flex items-center gap-2 font-medium text-indigo-600 transition-colors hover:text-indigo-800"
+                    className="mt-6 flex items-center gap-2 font-medium text-primary transition-colors hover:text-primary/80"
                     aria-label={`Descargar detalle del servicio: ${item.title}`}
                   >
                     <Download className="h-4 w-4" />

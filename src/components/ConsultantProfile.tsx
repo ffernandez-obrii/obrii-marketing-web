@@ -73,7 +73,7 @@ export function ConsultantProfile() {
               width={500}
               height={500}
               alt="Francisco Fernández - Psicólogo Consultor"
-              className="aspect-square h-auto w-full max-w-[500px] rounded-[1rem] border border-border/60 object-cover shadow-lg"
+              className="aspect-square h-auto w-full max-w-[500px] rounded-[1rem] border border-border/60 object-cover object-top shadow-lg"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>

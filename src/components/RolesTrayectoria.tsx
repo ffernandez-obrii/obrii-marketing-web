@@ -28,9 +28,9 @@ export function RolesTrayectoria() {
         {/* Gradient Masks for smooth fade out at the edges */}
         <div className="pointer-events-none absolute bottom-0 left-0 top-0 z-10 w-16 md:w-32 bg-gradient-to-r from-background to-transparent" />
         <div className="pointer-events-none absolute bottom-0 right-0 top-0 z-10 w-16 md:w-32 bg-gradient-to-l from-background to-transparent" />
-        
+
         {/* Scrolling Container */}
-        <div 
+        <div
           className="flex w-max items-center hover:[animation-play-state:paused]"
           style={{ animation: 'marquee 50s linear infinite' }}
         >
@@ -48,8 +48,9 @@ export function RolesTrayectoria() {
           ))}
         </div>
       </div>
-      
-      <style dangerouslySetInnerHTML={{ __html: `
+
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }

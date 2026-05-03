@@ -37,11 +37,11 @@ export function Hero() {
           Headhunting Ejecutivo y Evaluación Psicolaboral B2B
         </h1>
 
-        <h2 className="mt-8 max-w-2xl text-balance font-sans text-base font-normal leading-relaxed text-foreground/70 sm:text-lg md:text-xl">
+        <p className="mt-8 max-w-2xl text-balance font-sans text-base font-normal leading-relaxed text-foreground/70 sm:text-lg md:text-xl">
           Identificamos y validamos el talento estratégico que tu operación
           necesita. Mitigamos el riesgo de contratación mediante evaluaciones de
           alta precisión para empresas que buscan escalar de forma segura.
-        </h2>
+        </p>
 
         <div className="mt-12 flex w-full flex-col items-stretch justify-center gap-4 sm:mt-14 sm:w-auto sm:flex-row sm:items-center">
           <ButtonLink

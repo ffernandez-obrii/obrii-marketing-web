@@ -11,6 +11,17 @@ const defaultTitle =
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://obriiconsulting.com"),
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",

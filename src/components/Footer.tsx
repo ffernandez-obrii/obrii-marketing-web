@@ -34,7 +34,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Agendar Asesoría
+            Agendar Reunión
           </ButtonLink>
 
           <p className="flex flex-col items-center gap-3 text-center text-sm text-zinc-500 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-3 sm:gap-y-2">

@@ -88,7 +88,7 @@ export function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Agendar Asesoría
+              Agendar Reunión
             </ButtonLink>
 
             <button
@@ -152,7 +152,7 @@ export function Navbar() {
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
             >
-              Agendar Asesoría
+              Agendar Reunión
             </ButtonLink>
           </nav>
         </div>

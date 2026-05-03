@@ -51,7 +51,7 @@ export function Hero() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Agendar Asesoría
+            Agendar Reunión
           </ButtonLink>
           <ButtonLink href="#servicios" variant="secondary" size="lg">
             Nuestros Servicios

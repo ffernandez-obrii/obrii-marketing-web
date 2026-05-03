@@ -2,17 +2,20 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArticleShell } from "@/components/blog/ArticleShell";
 import {
-  blogPosts,
+  getAllPosts,
   formatPostDate,
   getPostBySlug,
-} from "@/lib/blog-data";
+} from "@/lib/mdx";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import { mdxComponents } from "@/components/mdx/MdxComponents";
 
 type Props = Readonly<{
   params: Promise<{ slug: string }>;
 }>;
 
-export function generateStaticParams() {
-  return blogPosts.map((post) => ({ slug: post.slug }));
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+  return posts.map((post) => ({ slug: post.metadata.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -22,8 +25,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Artículo" };
   }
   return {
-    title: post.title,
-    description: post.excerpt,
+    title: post.metadata.title,
+    description: post.metadata.excerpt,
     robots: { index: true },
   };
 }
@@ -37,12 +40,12 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <ArticleShell
-      title={post.title}
-      date={formatPostDate(post.date)}
+      title={post.metadata.title}
+      date={formatPostDate(post.metadata.date)}
     >
-      {post.content.map((paragraph, index) => (
-        <p key={index}>{paragraph}</p>
-      ))}
+      <div className="mdx-content">
+        <MDXRemote source={post.content} components={mdxComponents} />
+      </div>
     </ArticleShell>
   );
 }

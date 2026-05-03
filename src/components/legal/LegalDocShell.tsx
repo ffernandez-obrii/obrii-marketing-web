@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
 
 type LegalDocShellProps = {
@@ -14,6 +15,12 @@ export function LegalDocShell({
   return (
     <main className="py-16 md:py-20">
       <article className="mx-auto max-w-3xl px-6 lg:px-8">
+        <Link
+          href="/"
+          className="mb-8 inline-flex min-h-[44px] items-center py-1 text-sm font-medium text-zinc-500 transition-colors hover:text-zinc-900"
+        >
+          ← Volver al inicio
+        </Link>
         <h1 className="text-3xl font-bold tracking-tight text-zinc-900">
           {title}
         </h1>

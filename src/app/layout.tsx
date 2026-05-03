@@ -39,6 +39,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { SaaSPopup } from "@/components/ui/SaaSPopup";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -52,6 +54,7 @@ export default function RootLayout({
         {process.env.NEXT_PUBLIC_GA_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
         )}
+        <SaaSPopup />
       </body>
     </html>
   );

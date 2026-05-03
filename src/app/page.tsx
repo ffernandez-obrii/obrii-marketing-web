@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="flex flex-1 flex-col pt-[5.75rem] sm:pt-24">
+      <main className="flex flex-1 flex-col pt-0">
         <Hero />
         <TrustBanner />
         <SaaSPromo />

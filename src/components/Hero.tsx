@@ -8,9 +8,10 @@ function HeroAtmosphere() {
       className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
       aria-hidden
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.07] via-background to-background" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_65%_at_50%_-8%,hsl(var(--primary)/0.14),transparent_58%)]" />
-      <div className="absolute -left-[15%] top-[8%] h-[min(55vw,26rem)] w-[min(55vw,26rem)] rounded-full bg-primary/20 blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.09] via-background to-background" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_55%_at_50%_-18%,hsl(var(--primary)/0.16),transparent_55%)]" />
+      <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-primary/[0.06] to-transparent" />
+      <div className="absolute -left-[15%] top-[4%] h-[min(55vw,26rem)] w-[min(55vw,26rem)] rounded-full bg-primary/20 blur-3xl" />
       <div className="absolute -right-[12%] top-[28%] h-[min(48vw,22rem)] w-[min(48vw,22rem)] rounded-full bg-accent/15 blur-3xl" />
       <div className="absolute bottom-[15%] left-1/3 h-40 w-[min(70vw,28rem)] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
       <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-background via-background/60 to-transparent" />
@@ -24,7 +25,7 @@ export function Hero() {
   return (
     <section
       id="contacto"
-      className="relative isolate w-full overflow-hidden px-6 pb-24 pt-10 sm:px-10 sm:pb-28 sm:pt-12 md:pb-32 md:pt-14 lg:px-12 lg:pb-40 lg:pt-16"
+      className="relative isolate w-full overflow-hidden px-6 pb-24 pt-[calc(5.75rem+2.5rem)] sm:px-10 sm:pb-28 sm:pt-[calc(6rem+3rem)] md:pb-32 md:pt-[calc(6rem+3.5rem)] lg:px-12 lg:pb-40 lg:pt-[calc(6rem+4rem)]"
     >
       <HeroAtmosphere />
       <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center lg:max-w-4xl">

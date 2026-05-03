@@ -1,7 +1,5 @@
 import { ButtonLink } from "@/components/ui/button";
-
-const cardClass =
-  "p-8 rounded-xl border border-border/60 bg-card/60 backdrop-blur shadow-[0_0_0_1px_hsl(var(--border)/0.5),0_20px_40px_-28px_hsl(var(--ring)/0.6)] transition-shadow hover:shadow-[0_0_0_1px_hsl(var(--border)/0.55),0_24px_48px_-28px_hsl(var(--ring)/0.65)]";
+import { Download } from "lucide-react";
 
 type ServiceItem = {
   title: string;
@@ -17,15 +15,10 @@ const services: ServiceItem[] = [
     detailPdf: "/propuesta-evaluacion.pdf",
   },
   {
-    title: "Atracción de Talento y Headhunting",
+    title: "Headhunting",
     description:
       "Ciclo completo de búsqueda y selección para perfiles críticos, con garantía de permanencia y el mismo estándar de rigor en cada etapa.",
     detailPdf: "/propuesta-atraccion-talento.pdf",
-  },
-  {
-    title: "Obrii App (SaaS)",
-    description:
-      "El termómetro de tu empresa. Plataforma transaccional y autogestionada para medir fit cultural, burnout y competencias técnicas al instante.",
   },
 ];
 
@@ -33,11 +26,11 @@ export function Services() {
   return (
     <section
       id="servicios"
-      className="w-full px-6 py-20 sm:px-10 md:py-28 lg:px-12"
+      className="w-full bg-gradient-to-b from-transparent via-zinc-50 to-white px-6 py-20 sm:px-10 md:py-28 lg:px-12"
       aria-labelledby="services-heading"
     >
-      <div className="mx-auto max-w-6xl">
-        <header className="mx-auto max-w-3xl text-center lg:max-w-4xl">
+      <div className="mx-auto max-w-4xl">
+        <header className="mx-auto max-w-3xl text-center">
           <h2
             id="services-heading"
             className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
@@ -50,28 +43,30 @@ export function Services() {
           </p>
         </header>
 
-        <ul className="mt-14 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-3 md:gap-8">
+        <ul className="mt-14 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-2 md:gap-8">
           {services.map((item) => (
             <li key={item.title}>
-              <article className={`${cardClass} flex h-full flex-col`}>
-                <h3 className="text-lg font-semibold tracking-tight text-card-foreground">
+              <article className="flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-xl">
+                <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-indigo-600">
+                  Servicio Core
+                </span>
+                <h3 className="text-lg font-semibold tracking-tight text-zinc-900">
                   {item.title}
                 </h3>
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-foreground/75 sm:text-base">
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-zinc-600 sm:text-base">
                   {item.description}
                 </p>
                 {item.detailPdf ? (
-                  <ButtonLink
+                  <a
                     href={item.detailPdf}
-                    variant="secondary"
-                    size="default"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-6 w-full"
+                    className="mt-6 flex items-center gap-2 font-medium text-indigo-600 transition-colors hover:text-indigo-800"
                     aria-label={`Descargar detalle del servicio: ${item.title}`}
                   >
-                    📥 Descargar Detalle del Servicio
-                  </ButtonLink>
+                    <Download className="h-4 w-4" />
+                    Descargar Detalle del Servicio
+                  </a>
                 ) : null}
               </article>
             </li>
@@ -87,7 +82,7 @@ export function Services() {
             rel="noopener noreferrer"
             aria-label="Ver ejemplo de informe anonimizado en PDF"
           >
-            📄 Ver ejemplo de informe (anonimizado)
+            Ver ejemplo de informe (anonimizado)
           </ButtonLink>
         </div>
       </div>

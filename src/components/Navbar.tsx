@@ -61,6 +61,8 @@ export function Navbar() {
               variant="secondary"
               size="default"
               className="hidden md:inline-flex"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Iniciar Sesión
             </ButtonLink>
@@ -110,6 +112,8 @@ export function Navbar() {
               variant="secondary"
               size="default"
               className="mt-1 w-full"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
             >
               Iniciar Sesión

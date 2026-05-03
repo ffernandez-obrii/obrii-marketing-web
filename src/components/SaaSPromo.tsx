@@ -34,7 +34,13 @@ export function SaaSPromo() {
             crítico abandone la operación.
           </p>
           <div className="mt-8">
-            <ButtonLink href={APP_URL} variant="primary" size="lg">
+            <ButtonLink
+              href={APP_URL}
+              variant="primary"
+              size="lg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Descubrir Obrii App →
             </ButtonLink>
           </div>

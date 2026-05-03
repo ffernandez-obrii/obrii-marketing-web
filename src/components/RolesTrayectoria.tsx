@@ -17,9 +17,9 @@ const roles = [
 
 export function RolesTrayectoria() {
   return (
-    <section className="w-full bg-white px-6 py-10 sm:px-10 lg:px-12">
+    <section className="w-full bg-transparent px-6 py-10 sm:px-10 lg:px-12">
       <div className="mx-auto max-w-4xl">
-        <h2 className="mb-6 text-center text-xl font-semibold text-zinc-800 md:text-2xl">
+        <h2 className="mb-6 text-center text-xl font-semibold text-primary md:text-2xl">
           Experiencia en Roles Críticos y Posiciones Estratégicas
         </h2>
 

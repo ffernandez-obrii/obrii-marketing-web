@@ -60,6 +60,36 @@ export function Footer() {
               {CONTACT_EMAIL}
             </a>
           </p>
+
+          <nav
+            aria-label="Enlaces legales"
+            className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs text-zinc-500"
+          >
+            <Link
+              href="/privacidad"
+              className="transition-colors hover:text-zinc-300"
+            >
+              Privacidad
+            </Link>
+            <span aria-hidden className="text-zinc-700">
+              ·
+            </span>
+            <Link
+              href="/terminos"
+              className="transition-colors hover:text-zinc-300"
+            >
+              Términos
+            </Link>
+            <span aria-hidden className="text-zinc-700">
+              ·
+            </span>
+            <Link
+              href="/cookies"
+              className="transition-colors hover:text-zinc-300"
+            >
+              Cookies
+            </Link>
+          </nav>
         </div>
       </div>
     </footer>

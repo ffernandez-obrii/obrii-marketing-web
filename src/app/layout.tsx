@@ -4,10 +4,10 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const siteDescription =
-  "Consultoría boutique en Chile liderada por Francisco Fernández. Evaluación psicológica y Headhunting especializado para mitigar el riesgo operativo en Minería, Energía y Tecnología.";
+  "Headhunting ejecutivo y evaluación psicolaboral B2B en Chile. Identificamos y validamos talento estratégico; mitigamos el riesgo de contratación con evaluaciones de alta precisión.";
 
 const defaultTitle =
-  "Obrii Consulting | Headhunting B2B & Evaluación Psicolaboral";
+  "Obrii Consulting | Headhunting Ejecutivo y Evaluación Psicolaboral B2B";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://obriiconsulting.com"),

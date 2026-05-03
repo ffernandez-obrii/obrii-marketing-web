@@ -40,7 +40,7 @@ export function SaaSPopup() {
           href="https://app.obriiconsulting.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full rounded-lg bg-indigo-600 px-4 py-2 text-center text-xs font-semibold text-white transition-all hover:bg-indigo-500 hover:shadow-[0_0_15px_rgba(79,70,229,0.4)]"
+          className="block w-full rounded-lg bg-primary px-4 py-2 text-center text-xs font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-[0_0_15px_hsl(var(--primary)/0.5)]"
         >
           Probar plataforma
         </a>

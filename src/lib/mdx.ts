@@ -9,6 +9,7 @@ export type BlogPostMetadata = {
   date: string;
   excerpt: string;
   slug: string;
+  coverImage?: string;
 };
 
 export type BlogPost = {
@@ -34,6 +35,7 @@ export function getPostBySlug(slug: string): BlogPost | undefined {
         title: data.title,
         date: data.date,
         excerpt: data.excerpt,
+        coverImage: data.coverImage,
       },
       content,
     };

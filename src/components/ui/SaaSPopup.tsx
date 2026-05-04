@@ -1,9 +1,46 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const STORAGE_KEY = "obrii_popup_closed_at";
+const COOLDOWN_MS = 15 * 60 * 1000; // 15 minutos
 
 export function SaaSPopup() {
-  const [isVisible, setIsVisible] = useState(true);
+  // Inicia oculto para evitar hydration mismatch (servidor = null, cliente = null)
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    try {
+      const closedAt = localStorage.getItem(STORAGE_KEY);
+
+      if (!closedAt) {
+        // Nunca se cerró → mostrar popup
+        setIsVisible(true);
+        return;
+      }
+
+      const elapsed = Date.now() - Number(closedAt);
+
+      if (elapsed >= COOLDOWN_MS) {
+        // Ya pasaron 15 minutos → limpiar clave y mostrar
+        localStorage.removeItem(STORAGE_KEY);
+        setIsVisible(true);
+      }
+      // Si no han pasado 15 min, isVisible se mantiene en false
+    } catch {
+      // localStorage no disponible (SSR / incógnito restrictivo) → mostrar
+      setIsVisible(true);
+    }
+  }, []);
+
+  const handleClose = () => {
+    setIsVisible(false);
+    try {
+      localStorage.setItem(STORAGE_KEY, String(Date.now()));
+    } catch {
+      // silenciar errores de localStorage
+    }
+  };
 
   if (!isVisible) return null;
 
@@ -11,7 +48,7 @@ export function SaaSPopup() {
     <div className="fixed bottom-6 right-6 z-50 w-full max-w-sm animate-in slide-in-from-right-8 fade-in duration-500">
       <div className="relative rounded-xl border border-indigo-500/30 bg-zinc-900/95 p-7 shadow-2xl backdrop-blur-md">
         <button
-          onClick={() => setIsVisible(false)}
+          onClick={handleClose}
           className="absolute right-3.5 top-3.5 text-zinc-400 hover:text-white transition-colors"
           aria-label="Cerrar"
         >

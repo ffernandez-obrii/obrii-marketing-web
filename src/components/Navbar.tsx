@@ -72,7 +72,7 @@ export function Navbar() {
           <div className="flex items-center gap-2 sm:gap-2.5">
             <a
               href={APP_URL}
-              className="hidden md:inline-flex items-center gap-1.5 bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors text-sm font-medium shadow-sm"
+              className="hidden md:inline-flex items-center gap-1.5 bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/40 transition-all text-sm font-medium shadow-md shadow-primary/30"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -132,7 +132,7 @@ export function Navbar() {
             )}
             <a
               href={APP_URL}
-              className="mt-1 flex w-full items-center justify-center gap-1.5 bg-indigo-600 text-white px-4 py-2.5 rounded-md hover:bg-indigo-700 transition-colors text-sm font-medium shadow-sm"
+              className="mt-1 flex w-full items-center justify-center gap-1.5 bg-primary text-primary-foreground px-4 py-2.5 rounded-md hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/40 transition-all text-sm font-medium shadow-md shadow-primary/30"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}

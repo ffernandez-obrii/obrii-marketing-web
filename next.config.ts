@@ -20,8 +20,9 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/metodologia-hamp',
-        destination: '/',
+        // Pivot comercial 2026: Metodología HAMP deprecada. Mantenemos este redirect 301 activo para transferir todo el Link Equity y tráfico de las URLs indexadas en Google hacia la landing principal.
+        source: "/metodologia-hamp",
+        destination: "/",
         permanent: true,
       },
     ]

@@ -11,7 +11,7 @@ const APP_URL = "https://app.obriiconsulting.com";
 
 const navItems = [
   { href: "#servicios", label: "Consultoría" },
-  { href: "#obrii-app", label: "Obrii App" },
+  { href: "/obrii-app", label: "Plataforma SaaS" },
   { href: "#consultor", label: "El Consultor" },
   { href: "/blog", label: "Blog" },
 ] as const;

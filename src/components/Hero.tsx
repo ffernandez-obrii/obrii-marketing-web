@@ -2,7 +2,7 @@ import { ButtonLink } from "@/components/ui/button";
 import { AGENDAR_ASESORIA_URL, CONTACT_EMAIL } from "@/lib/site";
 
 /** Fondo sin retícula: gradientes suaves + halos difuminados (estilo vidrio / futurista sobrio). */
-function HeroAtmosphere() {
+export function HeroAtmosphere() {
   return (
     <div
       className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"

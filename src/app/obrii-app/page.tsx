@@ -12,6 +12,7 @@ import {
   Sparkles,
   type LucideIcon,
 } from "lucide-react";
+import { HeroAtmosphere } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { ButtonLink } from "@/components/ui/button";
@@ -174,8 +175,10 @@ export default function ObriiAppPage() {
   return (
     <>
       <Navbar />
-      <main className="relative isolate flex flex-1 flex-col overflow-hidden bg-white pt-[5.75rem] sm:pt-24">
-        <PageTopGlow />
+      <main className="relative isolate flex flex-1 flex-col overflow-hidden bg-background pt-[5.75rem] sm:pt-24">
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[min(56rem,92vh)]">
+          <HeroAtmosphere />
+        </div>
         <div className="relative z-[1] flex flex-1 flex-col">
           <HeroSection />
           <ProblemSection />
@@ -217,14 +220,14 @@ function HeroSection() {
   return (
     <section className="relative border-b border-zinc-200/80 px-6 pb-20 pt-12 sm:px-10 lg:px-12 lg:pb-28 lg:pt-16">
       <div className="relative mx-auto max-w-4xl text-center">
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#1865f4]/20 bg-[#1865f4]/5 px-4 py-1.5 text-xs font-semibold tracking-wide text-[#1865f4]">
-          <Sparkles className="size-3.5" aria-hidden />
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-background/80 px-4 py-1.5 text-xs font-medium tracking-wide text-foreground/80 backdrop-blur-sm">
+          <Sparkles className="size-3.5 text-primary" aria-hidden />
           HR Tech para equipos de alto rendimiento
         </span>
-        <h1 className="mt-6 font-sans text-4xl font-bold tracking-tight text-zinc-900 text-balance sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
+        <h1 className="mt-6 text-balance font-sans text-4xl font-bold tracking-tight text-primary sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1] [text-shadow:0_0_0_1px_hsl(var(--primary)/0.28),0_14px_50px_-18px_hsl(var(--primary)/0.45)]">
           Optimiza tu operación de RRHH. Reduce el riesgo operativo.
         </h1>
-        <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-zinc-600 text-pretty sm:text-xl">
+        <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-foreground/70 text-pretty sm:text-xl">
           IA aplicada a selección, costos y evaluaciones para procesos más
           eficientes. Obrii App es un ecosistema SaaS que une rigor científico
           con inteligencia artificial para preparar evidencia, permitiendo que
@@ -237,7 +240,7 @@ function HeroSection() {
             size="lg"
             target="_blank"
             rel="noopener noreferrer"
-            className="min-w-[200px] bg-[#1865f4] shadow-lg shadow-[#1865f4]/25 hover:bg-[#1454d4]"
+            className="min-w-[200px]"
           >
             Probar 7 días gratis
           </ButtonLink>
@@ -247,23 +250,13 @@ function HeroSection() {
             size="lg"
             target="_blank"
             rel="noopener noreferrer"
-            className="min-w-[200px] border-zinc-200 bg-white shadow-sm hover:border-[#1865f4]/30"
+            className="min-w-[200px]"
           >
             Crear cuenta Free
           </ButtonLink>
         </div>
       </div>
     </section>
-  );
-}
-
-/** Degradado superior compartido (navbar flotante + hero) solo en esta ruta */
-function PageTopGlow() {
-  return (
-    <div
-      className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[min(52rem,85vh)] bg-[radial-gradient(ellipse_80%_55%_at_50%_-15%,rgba(24,101,244,0.14),transparent_55%)]"
-      aria-hidden
-    />
   );
 }
 

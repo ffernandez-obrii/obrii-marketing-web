@@ -174,13 +174,16 @@ export default function ObriiAppPage() {
   return (
     <>
       <Navbar />
-      <main className="flex flex-1 flex-col bg-zinc-50/80 pt-[5.75rem] sm:pt-24">
-        <HeroSection />
-        <ProblemSection />
-        <PillarsSection />
-        <ToolsSection />
-        <PricingSection />
-        <FaqSection />
+      <main className="relative isolate flex flex-1 flex-col overflow-hidden bg-white pt-[5.75rem] sm:pt-24">
+        <PageTopGlow />
+        <div className="relative z-[1] flex flex-1 flex-col">
+          <HeroSection />
+          <ProblemSection />
+          <PillarsSection />
+          <ToolsSection />
+          <PricingSection />
+          <FaqSection />
+        </div>
       </main>
       <Footer />
     </>
@@ -212,8 +215,7 @@ function PageContainer({ children }: { children: ReactNode }) {
 
 function HeroSection() {
   return (
-    <section className="relative isolate overflow-hidden border-b border-zinc-200/80 bg-white px-6 pb-20 pt-12 sm:px-10 lg:px-12 lg:pb-28 lg:pt-16">
-      <HeroBackground />
+    <section className="relative border-b border-zinc-200/80 px-6 pb-20 pt-12 sm:px-10 lg:px-12 lg:pb-28 lg:pt-16">
       <div className="relative mx-auto max-w-4xl text-center">
         <span className="inline-flex items-center gap-1.5 rounded-full border border-[#1865f4]/20 bg-[#1865f4]/5 px-4 py-1.5 text-xs font-semibold tracking-wide text-[#1865f4]">
           <Sparkles className="size-3.5" aria-hidden />
@@ -255,10 +257,11 @@ function HeroSection() {
   );
 }
 
-function HeroBackground() {
+/** Degradado superior compartido (navbar flotante + hero) solo en esta ruta */
+function PageTopGlow() {
   return (
     <div
-      className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_55%_at_50%_-15%,rgba(24,101,244,0.14),transparent_55%)]"
+      className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[min(52rem,85vh)] bg-[radial-gradient(ellipse_80%_55%_at_50%_-15%,rgba(24,101,244,0.14),transparent_55%)]"
       aria-hidden
     />
   );

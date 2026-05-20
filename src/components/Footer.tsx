@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ui/button";
 import { AGENDAR_ASESORIA_URL, CONTACT_EMAIL } from "@/lib/site";
@@ -13,20 +12,6 @@ export function Footer() {
     <footer className="border-t border-white/[0.08] bg-zinc-950 text-zinc-300">
       <div className="mx-auto max-w-6xl px-6 py-10 sm:py-12">
         <div className="flex flex-col items-center gap-8">
-          <Link
-            href="/"
-            className="relative flex h-11 w-[132px] items-center opacity-90 transition-opacity hover:opacity-100"
-            aria-label="Obrii Consulting — inicio"
-          >
-            <Image
-              src="/logo.png"
-              alt="Logo Obrii Consulting"
-              width={132}
-              height={44}
-              className="h-11 w-auto object-contain"
-            />
-          </Link>
-
           <ButtonLink
             href={AGENDAR_ASESORIA_URL}
             variant="primary"

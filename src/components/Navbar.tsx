@@ -70,14 +70,16 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-2 sm:gap-2.5">
-            <a
+            <ButtonLink
               href={APP_URL}
-              className="hidden md:inline-flex items-center gap-1.5 bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/40 transition-all text-sm font-medium shadow-md shadow-primary/30"
+              variant="primary"
+              size="default"
+              className="hidden shrink-0 text-xs sm:inline-flex sm:text-sm"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Obrii App ✨
-            </a>
+              Obrii App
+            </ButtonLink>
             <ButtonLink
               href={AGENDAR_ASESORIA_URL}
               variant="primary"
@@ -130,15 +132,17 @@ export function Navbar() {
                 </a>
               ),
             )}
-            <a
+            <ButtonLink
               href={APP_URL}
-              className="mt-1 flex w-full items-center justify-center gap-1.5 bg-primary text-primary-foreground px-4 py-2.5 rounded-md hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/40 transition-all text-sm font-medium shadow-md shadow-primary/30"
+              variant="primary"
+              size="default"
+              className="mt-1 w-full"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
             >
-              Obrii App ✨
-            </a>
+              Obrii App
+            </ButtonLink>
             <ButtonLink
               href={AGENDAR_ASESORIA_URL}
               variant="primary"

@@ -10,6 +10,10 @@ export type BlogPostMetadata = {
   excerpt: string;
   slug: string;
   coverImage?: string;
+  author?: string;
+  tags?: string[];
+  seoTitle?: string;
+  seoDescription?: string;
 };
 
 export type BlogPost = {
@@ -36,6 +40,10 @@ export function getPostBySlug(slug: string): BlogPost | undefined {
         date: data.date,
         excerpt: data.excerpt,
         coverImage: data.coverImage,
+        author: data.author,
+        tags: data.tags,
+        seoTitle: data.seoTitle,
+        seoDescription: data.seoDescription,
       },
       content,
     };

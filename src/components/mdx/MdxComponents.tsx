@@ -57,8 +57,16 @@ export const mdxComponents: MDXComponents = {
     </strong>
   ),
   blockquote: ({ children }) => (
-    <blockquote className="my-8 border-l-4 border-primary/30 bg-primary/5 p-4 italic text-zinc-700">
+    <blockquote className="border-l-4 border-primary bg-gradient-to-br from-muted/60 to-muted/30 p-5 rounded-r-xl rounded-l-sm my-6 italic text-muted-foreground shadow-sm font-serif">
       {children}
     </blockquote>
+  ),
+  img: ({ src, alt, ...props }) => (
+    <img
+      src={src}
+      alt={alt}
+      className="rounded-xl border border-border/50 shadow-md my-8 w-full h-auto object-cover"
+      {...props}
+    />
   ),
 };

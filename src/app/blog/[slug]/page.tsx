@@ -42,8 +42,10 @@ export default async function BlogPostPage({ params }: Props) {
     <ArticleShell
       title={post.metadata.title}
       date={formatPostDate(post.metadata.date)}
+      author={post.metadata.author}
+      tags={post.metadata.tags}
     >
-      <div className="mdx-content">
+      <div className="mdx-content font-serif text-base md:text-lg leading-relaxed tracking-normal text-slate-900 dark:text-slate-100">
         <MDXRemote source={post.content} components={mdxComponents} />
       </div>
     </ArticleShell>

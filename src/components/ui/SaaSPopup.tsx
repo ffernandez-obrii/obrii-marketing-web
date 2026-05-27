@@ -10,27 +10,34 @@ export function SaaSPopup() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    try {
-      const closedAt = localStorage.getItem(STORAGE_KEY);
+    const showPopup = () => {
+      try {
+        const closedAt = localStorage.getItem(STORAGE_KEY);
 
-      if (!closedAt) {
-        // Nunca se cerró → mostrar popup
-        setIsVisible(true);
-        return;
+        if (!closedAt) {
+          return true;
+        }
+
+        const elapsed = Date.now() - Number(closedAt);
+
+        if (elapsed >= COOLDOWN_MS) {
+          localStorage.removeItem(STORAGE_KEY);
+          return true;
+        }
+
+        return false;
+      } catch {
+        return true;
       }
+    };
 
-      const elapsed = Date.now() - Number(closedAt);
-
-      if (elapsed >= COOLDOWN_MS) {
-        // Ya pasaron 15 minutos → limpiar clave y mostrar
-        localStorage.removeItem(STORAGE_KEY);
+    const id = window.setTimeout(() => {
+      if (showPopup()) {
         setIsVisible(true);
       }
-      // Si no han pasado 15 min, isVisible se mantiene en false
-    } catch {
-      // localStorage no disponible (SSR / incógnito restrictivo) → mostrar
-      setIsVisible(true);
-    }
+    }, 0);
+
+    return () => window.clearTimeout(id);
   }, []);
 
   const handleClose = () => {

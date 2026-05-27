@@ -44,7 +44,7 @@ export function ArticleShell({
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-0.5 text-xs font-semibold text-primary tracking-wide transition-colors hover:bg-primary/10"
+                className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-0.5 text-xs font-medium text-primary tracking-wide transition-colors hover:bg-primary/10"
               >
                 {tag}
               </span>

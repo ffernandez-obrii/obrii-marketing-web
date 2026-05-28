@@ -24,10 +24,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) {
     return { title: "Artículo" };
   }
+  const title = post.metadata.seoTitle ?? post.metadata.title;
+  const description = post.metadata.seoDescription ?? post.metadata.excerpt;
   return {
-    title: post.metadata.title,
-    description: post.metadata.excerpt,
-    robots: { index: true },
+    title,
+    description,
+    alternates: { canonical: `/blog/${post.metadata.slug}` },
+    robots: { index: true, follow: true },
+    openGraph: {
+      type: "article",
+      title,
+      description,
+      url: `/blog/${post.metadata.slug}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   };
 }
 

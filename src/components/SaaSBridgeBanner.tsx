@@ -41,7 +41,7 @@ export function SaaSBridgeBanner() {
         aria-hidden
       />
 
-      <div className="relative overflow-hidden rounded-2xl border border-border/70 bg-card/60 shadow-[0_24px_48px_-12px_hsl(var(--foreground)/0.08)] ring-1 ring-black/[0.04] backdrop-blur">
+      <div className="relative overflow-hidden border border-border/70 bg-gradient-to-br from-card via-sky-500/3 to-violet-500/5 backdrop-blur-md shadow-[0_32px_64px_-12px_hsl(var(--primary)/0.08)] rounded-2xl ring-1 ring-white/40 dark:ring-black/10 transition-all duration-300 hover:shadow-[0_32px_64px_-12px_hsl(var(--primary)/0.12)]">
         {/* Hairline espectral premium */}
         <div className="h-1.5 w-full bg-gradient-to-r from-sky-500 via-primary to-violet-500" />
 

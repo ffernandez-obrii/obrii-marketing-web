@@ -4,7 +4,7 @@ import { getAllPosts } from '@/lib/mdx'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://obriiconsulting.com'
 
-  const staticRoutes = ['', '/privacidad', '/terminos', '/cookies', '/blog'].map((route) => ({
+  const staticRoutes = ['', '/servicios', '/obrii-app', '/privacidad', '/terminos', '/cookies', '/blog'].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,

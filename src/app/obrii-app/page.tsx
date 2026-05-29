@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "Obrii App | Software de Clima Organizacional y Selección B2B con IA",
   },
   description:
-    "Optimiza la gestión de talento. Automatiza entrevistas con el método BEI, mide riesgos psicosociales y evalúa el clima laboral con IA. Prueba 7 días gratis.",
+    "Optimiza la gestión de talento en Chile y toda Latinoamérica. Automatiza entrevistas con el método BEI, mide riesgos psicosociales y evalúa el clima laboral con IA. Prueba 7 días gratis.",
   alternates: {
     canonical: "/obrii-app",
   },

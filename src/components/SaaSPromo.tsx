@@ -23,15 +23,16 @@ export function SaaSPromo() {
           </span>
           <h2
             id="saas-promo-heading"
-            className="mt-6 block max-w-xl bg-gradient-to-b from-white to-white/60 bg-clip-text pb-[0.08em] font-sans text-3xl font-bold tracking-tight text-transparent text-balance sm:max-w-2xl sm:text-4xl"
+            className="mt-6 block max-w-xl bg-gradient-to-b from-white to-white/60 bg-clip-text pb-[0.08em] font-sans text-3xl font-semibold tracking-tight text-transparent text-balance sm:max-w-2xl sm:text-4xl"
           >
             El Termómetro Exacto de tu Talento
           </h2>
           <p className="mt-6 text-pretty text-base leading-relaxed text-zinc-400 sm:text-lg">
-            Nuestra plataforma propietaria te permite medir el fit cultural,
-            detectar riesgo de burnout temprano y evaluar competencias técnicas
-            a escala. Toma decisiones basadas en datos antes de que el talento
-            crítico abandone la operación.
+            Nuestra plataforma propietaria convierte cada evaluación en métricas
+            comparables: visualiza tendencias, anticipa riesgos y mide la
+            evolución de tu equipo a escala regional. Gestiona personas en Chile
+            y toda Latinoamérica desde un mismo panel —y velo en acción aquí
+            mismo.
           </p>
           <div className="mt-8">
             <ButtonLink

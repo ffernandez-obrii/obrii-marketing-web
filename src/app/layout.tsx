@@ -4,10 +4,10 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const siteDescription =
-  "Headhunting ejecutivo y evaluación psicolaboral B2B en Chile. Identificamos y validamos talento estratégico; mitigamos el riesgo de contratación con evaluaciones de alta precisión.";
+  "Headhunting ejecutivo y evaluación psicolaboral B2B en Chile, con servicios remotos para toda Latinoamérica. Identificamos y validamos talento estratégico; mitigamos el riesgo de contratación con evaluaciones de alta precisión.";
 
 const defaultTitle =
-  "Obrii Consulting | Headhunting Ejecutivo y Evaluación Psicolaboral B2B";
+  "Obrii Consulting | Headhunting Ejecutivo y Evaluación Psicolaboral B2B en Chile";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://obriiconsulting.com"),

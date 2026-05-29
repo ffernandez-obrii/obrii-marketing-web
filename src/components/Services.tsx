@@ -33,13 +33,14 @@ export function Services() {
         <header className="mx-auto max-w-3xl text-center">
           <h2
             id="services-heading"
-            className="text-balance text-3xl font-semibold tracking-tight text-primary sm:text-4xl"
+            className="text-balance font-sans text-3xl font-semibold tracking-tight text-primary sm:text-4xl"
           >
             Soluciones a Medida para tu Escala
           </h2>
           <p className="mt-5 text-pretty text-base leading-relaxed text-foreground/70 sm:text-lg">
             Evaluación por competencias y rigor metodológico para roles que no
-            pueden fallar — más tecnología cuando tu operación necesita escala.
+            pueden fallar — más tecnología cuando tu operación necesita escalar
+            en Chile y el resto de Latinoamérica.
           </p>
         </header>
 

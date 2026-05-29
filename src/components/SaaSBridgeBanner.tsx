@@ -54,15 +54,17 @@ export function SaaSBridgeBanner() {
             </span>
             <h2
               id="saas-bridge-heading"
-              className="mt-4 text-balance font-sans text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
+              className="mt-4 text-balance font-sans text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
             >
-              Decide talento con evidencia, no con intuición.
+              Del servicio boutique al software propio.
             </h2>
             <p className="mt-4 font-sans text-base leading-relaxed text-muted-foreground sm:text-lg">
               <strong className="font-semibold text-foreground">Obrii App</strong>{" "}
-              estructura la evidencia de cada candidato, mide clima, precave
-              burnout y simula costos laborales en un solo flujo. La IA prepara
-              la decisión; tú la tomas.
+              es el HR OS modular que nace de nuestra consultoría: reúne en un
+              solo flujo —de la selección a la estructura de costos— lo que hoy
+              resuelves con herramientas dispersas. La IA prepara la evidencia;
+              la decisión sigue siendo tuya. Operación pensada para Chile y toda
+              Latinoamérica.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">

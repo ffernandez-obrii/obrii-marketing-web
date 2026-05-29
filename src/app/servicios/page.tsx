@@ -12,6 +12,7 @@ import {
   GraduationCap,
   Mail,
   MessageSquareText,
+  Palette,
   Phone,
   Sparkles,
   Target,
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
   title:
     "Servicios | Evaluación Psicolaboral de Precisión y Selección B2B — Obrii Consulting",
   description:
-    "Catálogo de servicios de Obrii Consulting: evaluación psicolaboral de precisión por competencias (STAR/BEI), suite psicométrica propia, niveles por escala de cargos y SLA de 48 horas. Cobertura en Chile y toda Latinoamérica.",
+    "Catálogo de servicios de Obrii Consulting: evaluación psicolaboral de precisión por competencias (STAR/BEI), suite psicométrica propia, niveles por escala de cargos y SLA de 48 horas hábiles. Cobertura en Chile y toda Latinoamérica.",
   alternates: {
     canonical: "/servicios",
   },
@@ -115,6 +116,17 @@ const suiteCategories: { title: string; tests: string[] }[] = [
   },
 ];
 
+/* Variantes pastel del acento principal (ajustes de usuario en Obrii App). */
+const pastelVariants: { name: string; color: string }[] = [
+  { name: "sky", color: "#7dd3fc" },
+  { name: "coral", color: "#fca5a5" },
+  { name: "amber", color: "#fcd34d" },
+  { name: "blush", color: "#fbcfe8" },
+  { name: "berry", color: "#f0abfc" },
+  { name: "mint", color: "#6ee7b7" },
+  { name: "lavender", color: "#c4b5fd" },
+];
+
 const depthTiers: {
   icon: LucideIcon;
   name: string;
@@ -190,9 +202,13 @@ export default function ServiciosPage() {
           <HeroAtmosphere />
         </div>
         <div className="relative z-[1] flex flex-1 flex-col">
+          {/* 1 · Claro */}
           <HeroSection />
+          {/* 2 · Oscuro (Obrii navy + glow) */}
           <EvaluacionPsicolaboralSection />
+          {/* 3 · Claro */}
           <UpcomingSection />
+          {/* 4 · Oscuro (cierre) */}
           <ClosingCta />
         </div>
       </main>
@@ -203,6 +219,36 @@ export default function ServiciosPage() {
 
 function PageContainer({ children }: { children: ReactNode }) {
   return <div className="mx-auto max-w-6xl">{children}</div>;
+}
+
+/* Tarjeta "bento" sobre fondo oscuro: vidrio esmerilado + glow al hover. */
+function BentoCard({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <article
+      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.09] bg-white/[0.04] p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-xl transition-[transform,border-color,box-shadow] duration-300 motion-safe:hover:-translate-y-1 hover:border-primary/40 motion-safe:hover:shadow-[0_24px_48px_-28px_hsl(var(--primary)/0.22)] sm:p-8 ${className}`}
+    >
+      <div
+        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(ellipse_90%_75%_at_50%_-15%,rgba(255,255,255,0.09),transparent_58%),radial-gradient(ellipse_70%_50%_at_100%_100%,hsl(var(--primary)/0.06),transparent_55%)]"
+        aria-hidden
+      />
+      <div className="relative z-10 flex h-full flex-col">{children}</div>
+    </article>
+  );
+}
+
+/* Chip de test sobre fondo oscuro. */
+function DarkChip({ children }: { children: ReactNode }) {
+  return (
+    <li className="rounded-lg border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm text-zinc-300">
+      {children}
+    </li>
+  );
 }
 
 function HeroSection() {
@@ -250,18 +296,33 @@ function EvaluacionPsicolaboralSection() {
   return (
     <section
       id="evaluacion-psicolaboral"
-      className="scroll-mt-24 bg-white px-6 py-20 sm:px-10 lg:px-12 lg:py-24"
+      className="relative isolate scroll-mt-24 overflow-hidden border-y border-white/[0.08] bg-zinc-950 px-6 py-20 text-zinc-50 sm:px-10 md:py-28 lg:px-12 lg:py-32"
+      aria-labelledby="evaluacion-heading"
     >
-      <PageContainer>
-        {/* Encabezado del servicio */}
+      {/* Glow de marca */}
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_55%_at_50%_-10%,rgba(59,130,246,0.18),transparent_55%),radial-gradient(ellipse_70%_45%_at_100%_60%,rgba(99,102,241,0.08),transparent_50%)]"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"
+        aria-hidden
+      />
+
+      <div className="relative mx-auto max-w-6xl">
+        {/* Encabezado */}
         <div className="mx-auto max-w-3xl text-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-primary">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.04] px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-sky-300/90 backdrop-blur-sm">
+            <Sparkles className="size-3.5" aria-hidden />
             Servicio Core
           </span>
-          <h2 className="mt-3 font-sans text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
+          <h2
+            id="evaluacion-heading"
+            className="mt-6 text-balance font-sans text-3xl font-semibold tracking-tight text-white sm:text-4xl"
+          >
             Evaluación Psicolaboral de Precisión
           </h2>
-          <p className="mt-4 text-pretty text-base leading-relaxed text-zinc-600 sm:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-pretty leading-relaxed text-zinc-400">
             Validación rigurosa de candidatos finalistas por competencias:
             decisión objetiva, defendible ante dirección y con trazabilidad
             metodológica completa.
@@ -270,186 +331,232 @@ function EvaluacionPsicolaboralSection() {
 
         {/* Enfoque consultivo y adaptabilidad metodológica */}
         <div className="mt-16">
-          <h3 className="text-center font-sans text-2xl font-semibold tracking-tight text-zinc-900">
+          <h3 className="text-center font-sans text-xl font-semibold tracking-tight text-white sm:text-2xl">
             Enfoque consultivo y adaptabilidad metodológica
           </h3>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          <ul className="mt-10 grid auto-rows-fr grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 md:gap-6">
             {methodologyPoints.map((point) => {
               const Icon = point.icon;
               return (
-                <article
-                  key={point.label}
-                  className="flex gap-4 rounded-2xl border border-zinc-200/90 bg-zinc-50/50 p-6 shadow-sm transition-shadow hover:shadow-md"
-                >
-                  <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                    <Icon className="size-5" aria-hidden />
-                  </div>
-                  <div className="min-w-0">
-                    <h4 className="text-base font-semibold text-zinc-900">
+                <li key={point.label}>
+                  <BentoCard>
+                    <Icon
+                      className="mb-6 size-9 shrink-0 text-sky-400/85"
+                      strokeWidth={1.25}
+                      aria-hidden
+                    />
+                    <h4 className="text-base font-semibold tracking-tight text-white">
                       {point.label}
                     </h4>
-                    <p className="mt-1.5 text-sm leading-relaxed text-zinc-600">
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-zinc-400">
                       {point.text}
                     </p>
-                  </div>
-                </article>
+                  </BentoCard>
+                </li>
               );
             })}
-          </div>
+          </ul>
         </div>
 
         {/* Suite de evaluaciones integrada */}
         <div className="mt-20">
           <div className="mx-auto max-w-3xl text-center">
-            <h3 className="font-sans text-2xl font-semibold tracking-tight text-zinc-900">
+            <h3 className="font-sans text-xl font-semibold tracking-tight text-white sm:text-2xl">
               Suite de Evaluaciones Integrada{" "}
-              <span className="text-primary">(Obrii App)</span>
+              <span className="text-sky-400">(Obrii App)</span>
             </h3>
-            <p className="mt-3 text-pretty italic leading-relaxed text-zinc-500">
-              Ofrecemos una suite propia que combina la psicometría más rigurosa
-              con nuevas herramientas validadas por la ciencia.
+            <p className="mt-3 text-pretty italic leading-relaxed text-zinc-400">
+              Una suite propia que combina la psicometría más rigurosa con nuevas
+              herramientas validadas por la ciencia.
             </p>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <ul className="mt-10 grid auto-rows-fr grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
             {suiteCategories.map((category) => (
-              <article
-                key={category.title}
-                className="rounded-2xl border border-zinc-200/90 bg-white p-7 shadow-sm transition-all hover:border-primary/25 hover:shadow-lg hover:shadow-primary/5"
-              >
-                <h4 className="text-lg font-semibold text-zinc-900">
-                  {category.title}
-                </h4>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {category.tests.map((test) => (
-                    <li
-                      key={test}
-                      className="rounded-lg border border-zinc-200/80 bg-zinc-50 px-3 py-1.5 text-sm text-zinc-700"
-                    >
-                      {test}
-                    </li>
-                  ))}
-                </ul>
-              </article>
+              <li key={category.title}>
+                <BentoCard>
+                  <h4 className="text-lg font-semibold text-white">
+                    {category.title}
+                  </h4>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {category.tests.map((test) => (
+                      <DarkChip key={test}>{test}</DarkChip>
+                    ))}
+                  </ul>
+                </BentoCard>
+              </li>
             ))}
+          </ul>
+
+          {/* Detalle: personalización pastel con glow */}
+          <div className="mt-6">
+            <BentoCard>
+              <div className="flex items-start gap-4">
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-sky-400/85">
+                  <Palette className="size-5" strokeWidth={1.25} aria-hidden />
+                </div>
+                <div className="min-w-0">
+                  <h4 className="text-base font-semibold text-white">
+                    Personalización Pastel{" "}
+                    <span className="font-normal text-zinc-400">
+                      (Ajustes de Usuario)
+                    </span>
+                  </h4>
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+                    El usuario puede conmutar el acento principal a 7 variantes
+                    pastel. Cambian la variable{" "}
+                    <code className="rounded bg-white/[0.06] px-1.5 py-0.5 font-mono text-[0.8em] text-sky-200/90">
+                      --primary
+                    </code>{" "}
+                    y el sidebar de forma segura, manteniendo el background
+                    intacto.
+                  </p>
+                  <ul className="mt-5 flex flex-wrap gap-2.5">
+                    {pastelVariants.map((variant) => (
+                      <li
+                        key={variant.name}
+                        className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] py-1.5 pl-2 pr-3 text-sm text-zinc-300 transition-colors hover:border-white/25"
+                      >
+                        <span
+                          className="size-3.5 rounded-full"
+                          style={{
+                            backgroundColor: variant.color,
+                            boxShadow: `0 0 10px 1px ${variant.color}, 0 0 2px 0 ${variant.color}`,
+                          }}
+                          aria-hidden
+                        />
+                        <code className="font-mono text-[0.85em]">
+                          {variant.name}
+                        </code>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </BentoCard>
           </div>
         </div>
 
         {/* Niveles de profundidad */}
         <div className="mt-20">
           <div className="mx-auto max-w-3xl text-center">
-            <h3 className="font-sans text-2xl font-semibold tracking-tight text-zinc-900">
+            <h3 className="font-sans text-xl font-semibold tracking-tight text-white sm:text-2xl">
               Niveles de Profundidad
             </h3>
-            <p className="mt-3 text-zinc-500">
+            <p className="mt-3 text-zinc-400">
               Adaptamos la profundidad de la evaluación a la escala del cargo.
             </p>
           </div>
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          <ul className="mt-10 grid auto-rows-fr grid-cols-1 gap-5 lg:grid-cols-3 md:gap-6">
             {depthTiers.map((tier) => {
               const Icon = tier.icon;
               return (
-                <article
-                  key={tier.name}
-                  className={`relative flex flex-col rounded-2xl border p-7 shadow-sm ${
-                    tier.highlighted
-                      ? "border-primary bg-white shadow-xl shadow-primary/10 ring-2 ring-primary/20"
-                      : "border-zinc-200/90 bg-white"
-                  }`}
-                >
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                      <Icon className="size-5" aria-hidden />
+                <li key={tier.name}>
+                  <BentoCard
+                    className={
+                      tier.highlighted
+                        ? "border-primary/40 shadow-[0_24px_48px_-28px_hsl(var(--primary)/0.35)]"
+                        : ""
+                    }
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <Icon
+                        className="size-9 shrink-0 text-sky-400/85"
+                        strokeWidth={1.25}
+                        aria-hidden
+                      />
+                      <span
+                        className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${
+                          tier.highlighted
+                            ? "bg-primary text-primary-foreground shadow-[0_0_18px_-2px_hsl(var(--primary)/0.7)]"
+                            : "border border-white/10 bg-white/[0.04] text-zinc-300"
+                        }`}
+                      >
+                        {tier.badge}
+                      </span>
                     </div>
-                    <span
-                      className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${
-                        tier.highlighted
-                          ? "bg-primary text-primary-foreground"
-                          : "bg-zinc-100 text-zinc-500"
-                      }`}
-                    >
-                      {tier.badge}
-                    </span>
-                  </div>
-                  <h4 className="mt-4 text-lg font-semibold text-zinc-900">
-                    {tier.name}
-                  </h4>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-600">
-                    {tier.description}
-                  </p>
-                </article>
+                    <h4 className="mt-5 text-lg font-semibold text-white">
+                      {tier.name}
+                    </h4>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-400">
+                      {tier.description}
+                    </p>
+                  </BentoCard>
+                </li>
               );
             })}
-          </div>
+          </ul>
         </div>
 
         {/* CTA de contacto + descarga */}
-        <div className="mt-16 rounded-2xl border border-primary/20 bg-primary/[0.04] p-8 shadow-sm backdrop-blur-sm sm:p-10">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-xl">
-              <h3 className="font-sans text-2xl font-semibold tracking-tight text-zinc-900">
-                ¿Deseas cotizar este servicio?
-              </h3>
-              <p className="mt-2 text-zinc-600">
-                Contáctanos directamente y diseñamos una propuesta a la medida de
-                tu proceso.
-              </p>
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-5">
-                <a
-                  href={`mailto:${CONTACT_EMAIL}`}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-primary/80"
-                >
-                  <Mail className="h-4 w-4" />
-                  {CONTACT_EMAIL}
-                </a>
-                <a
-                  href={CONTACT_WHATSAPP}
+        <div className="mt-16">
+          <BentoCard className="border-primary/30">
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-xl">
+                <h3 className="font-sans text-2xl font-semibold tracking-tight text-white">
+                  ¿Deseas cotizar este servicio?
+                </h3>
+                <p className="mt-2 text-zinc-400">
+                  Contáctanos directamente y diseñamos una propuesta a la medida
+                  de tu proceso.
+                </p>
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-5">
+                  <a
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    className="inline-flex items-center gap-2 text-sm font-medium text-sky-300 transition-colors hover:text-sky-200"
+                  >
+                    <Mail className="h-4 w-4" />
+                    {CONTACT_EMAIL}
+                  </a>
+                  <a
+                    href={CONTACT_WHATSAPP}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-sky-300 transition-colors hover:text-sky-200"
+                    aria-label={`Teléfono y WhatsApp: ${CONTACT_PHONE_DISPLAY}`}
+                  >
+                    <Phone className="h-4 w-4" />
+                    {CONTACT_PHONE_DISPLAY}
+                  </a>
+                </div>
+                <p className="sr-only">
+                  Teléfono y WhatsApp:{" "}
+                  <a href={`tel:${CONTACT_PHONE_TEL}`}>{CONTACT_PHONE_DISPLAY}</a>
+                </p>
+              </div>
+
+              <div className="flex shrink-0 flex-col gap-3">
+                <ButtonLink
+                  href={AGENDAR_ASESORIA_URL}
+                  variant="primary"
+                  size="lg"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-primary/80"
-                  aria-label={`Teléfono y WhatsApp: ${CONTACT_PHONE_DISPLAY}`}
+                  className="w-full sm:min-w-[220px]"
                 >
-                  <Phone className="h-4 w-4" />
-                  {CONTACT_PHONE_DISPLAY}
+                  <Calendar className="h-4 w-4" />
+                  Agendar reunión
+                </ButtonLink>
+                <a
+                  href="/propuesta-evaluacion.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-md border border-white/15 bg-white/[0.04] px-8 py-2.5 text-sm font-medium text-zinc-200 backdrop-blur-sm transition-all hover:border-primary/40 hover:bg-white/[0.08]"
+                >
+                  <Download className="h-4 w-4" />
+                  Descargar Detalle del Servicio
                 </a>
               </div>
-              <p className="sr-only">
-                Teléfono y WhatsApp:{" "}
-                <a href={`tel:${CONTACT_PHONE_TEL}`}>{CONTACT_PHONE_DISPLAY}</a>
-              </p>
             </div>
-
-            <div className="flex shrink-0 flex-col gap-3">
-              <ButtonLink
-                href={AGENDAR_ASESORIA_URL}
-                variant="primary"
-                size="lg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:min-w-[220px]"
-              >
-                <Calendar className="h-4 w-4" />
-                Agendar reunión
-              </ButtonLink>
-              <a
-                href="/propuesta-evaluacion.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-input/60 bg-background/40 px-8 py-2.5 text-sm font-medium text-foreground backdrop-blur-sm transition-all hover:border-primary/40 hover:bg-primary/10"
-              >
-                <Download className="h-4 w-4" />
-                Descargar Detalle del Servicio
-              </a>
-            </div>
-          </div>
+          </BentoCard>
         </div>
-      </PageContainer>
+      </div>
     </section>
   );
 }
 
 function UpcomingSection() {
   return (
-    <section className="border-t border-zinc-200/80 bg-zinc-50/80 px-6 py-20 sm:px-10 lg:px-12 lg:py-24">
+    <section className="bg-zinc-50/80 px-6 py-20 sm:px-10 lg:px-12 lg:py-24">
       <PageContainer>
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-primary">
@@ -515,38 +622,38 @@ function UpcomingSection() {
 
 function ClosingCta() {
   return (
-    <section className="border-t border-zinc-200/80 bg-white px-6 py-20 sm:px-10 lg:px-12 lg:py-24">
-      <PageContainer>
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-sans text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
-            Hablemos de tu próximo proceso crítico
-          </h2>
-          <p className="mt-4 text-zinc-600">
-            Acompañamos a empresas en Chile y toda Latinoamérica a tomar
-            decisiones de talento con evidencia y trazabilidad.
-          </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <ButtonLink
-              href={AGENDAR_ASESORIA_URL}
-              variant="primary"
-              size="lg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="min-w-[200px]"
-            >
-              Agendar reunión
-            </ButtonLink>
-            <ButtonLink
-              href={`mailto:${CONTACT_EMAIL}`}
-              variant="secondary"
-              size="lg"
-              className="min-w-[200px]"
-            >
-              Escribir un correo
-            </ButtonLink>
-          </div>
+    <section className="relative isolate overflow-hidden border-t border-white/[0.08] bg-zinc-950 px-6 py-20 text-zinc-50 sm:px-10 lg:px-12 lg:py-28">
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(59,130,246,0.18),transparent_55%),radial-gradient(ellipse_60%_50%_at_50%_120%,rgba(99,102,241,0.1),transparent_55%)]"
+        aria-hidden
+      />
+      <div className="relative mx-auto max-w-2xl text-center">
+        <h2 className="font-sans text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          Hablemos de tu próximo proceso crítico
+        </h2>
+        <p className="mt-4 text-zinc-400">
+          Acompañamos a empresas en Chile y toda Latinoamérica a tomar decisiones
+          de talento con evidencia y trazabilidad.
+        </p>
+        <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <ButtonLink
+            href={AGENDAR_ASESORIA_URL}
+            variant="primary"
+            size="lg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="min-w-[200px]"
+          >
+            Agendar reunión
+          </ButtonLink>
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="inline-flex h-11 min-w-[200px] items-center justify-center gap-2 rounded-md border border-white/15 bg-white/[0.04] px-8 text-sm font-medium text-zinc-200 backdrop-blur-sm transition-all hover:border-primary/40 hover:bg-white/[0.08]"
+          >
+            Escribir un correo
+          </a>
         </div>
-      </PageContainer>
+      </div>
     </section>
   );
 }

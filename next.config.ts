@@ -25,15 +25,11 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
-      // Consultoría y páginas corporativas retiradas (GA 404)
-      {
-        source: "/servicios",
-        destination: "/",
-        permanent: true,
-      },
+      // /servicios es ahora una página real (catálogo). Sin redirect.
+      // Consultoría → catálogo de servicios (transfiere link equity al nuevo destino)
       {
         source: "/consultoria",
-        destination: "/",
+        destination: "/servicios",
         permanent: true,
       },
       {
@@ -78,12 +74,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/evaluacion",
-        destination: "/",
+        destination: "/servicios#evaluacion-psicolaboral",
         permanent: true,
       },
       {
         source: "/headhunting",
-        destination: "/",
+        destination: "/servicios#headhunting",
         permanent: true,
       },
       {

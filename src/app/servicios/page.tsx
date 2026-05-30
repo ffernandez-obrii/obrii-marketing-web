@@ -12,7 +12,6 @@ import {
   GraduationCap,
   Mail,
   MessageSquareText,
-  Palette,
   Phone,
   Sparkles,
   Target,
@@ -116,16 +115,8 @@ const suiteCategories: { title: string; tests: string[] }[] = [
   },
 ];
 
-/* Variantes pastel del acento principal (ajustes de usuario en Obrii App). */
-const pastelVariants: { name: string; color: string }[] = [
-  { name: "sky", color: "#7dd3fc" },
-  { name: "coral", color: "#fca5a5" },
-  { name: "amber", color: "#fcd34d" },
-  { name: "blush", color: "#fbcfe8" },
-  { name: "berry", color: "#f0abfc" },
-  { name: "mint", color: "#6ee7b7" },
-  { name: "lavender", color: "#c4b5fd" },
-];
+/* Acentos pastel: detalle estético sutil (no texto). Tonos sky/coral/amber/mint. */
+const pastelAccents = ["#7dd3fc", "#fca5a5", "#fcd34d", "#6ee7b7"];
 
 const depthTiers: {
   icon: LucideIcon;
@@ -253,38 +244,31 @@ function DarkChip({ children }: { children: ReactNode }) {
 
 function HeroSection() {
   return (
-    <section className="relative border-b border-zinc-200/80 px-6 pb-20 pt-12 sm:px-10 lg:px-12 lg:pb-24 lg:pt-16">
-      <div className="relative mx-auto max-w-4xl text-center">
+    <section className="relative flex min-h-[80vh] items-center border-b border-zinc-200/80 px-6 py-24 sm:px-10 sm:py-28 lg:px-12 lg:py-32">
+      <div className="relative mx-auto w-full max-w-4xl text-center">
         <span className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-background/80 px-4 py-1.5 text-xs font-medium tracking-wide text-foreground/80 backdrop-blur-sm">
           <Sparkles className="size-3.5 text-primary" aria-hidden />
           Catálogo de servicios B2B
         </span>
-        <h1 className="mt-6 text-balance font-sans text-4xl font-bold tracking-tight text-primary sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1] [text-shadow:0_0_0_1px_hsl(var(--primary)/0.28),0_14px_50px_-18px_hsl(var(--primary)/0.45)]">
+        <h1 className="mt-7 text-balance font-sans text-4xl font-bold tracking-tight text-primary sm:text-5xl lg:text-[3.5rem] lg:leading-[1.05] [text-shadow:0_0_0_1px_hsl(var(--primary)/0.28),0_14px_50px_-18px_hsl(var(--primary)/0.45)]">
           Soluciones a Medida para tu Escala
         </h1>
-        <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-foreground/70 text-pretty sm:text-xl">
-          Evaluación por competencias y rigor metodológico para roles que no
-          pueden fallar — más tecnología cuando tu operación necesita escalar en
-          Chile y el resto de Latinoamérica.
+        <p className="mx-auto mt-7 max-w-3xl text-lg leading-relaxed text-foreground/70 text-pretty sm:text-xl">
+          Consultoría estratégica, headhunting especializado y diagnóstico
+          organizacional para roles y equipos que no pueden fallar. Combinamos el
+          rigor de la psicología con herramientas metodológicas para impulsar y
+          escalar tu operación en Chile y el resto de Latinoamérica.
         </p>
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="mt-10 flex justify-center">
           <ButtonLink
             href={AGENDAR_ASESORIA_URL}
             variant="primary"
             size="lg"
             target="_blank"
             rel="noopener noreferrer"
-            className="min-w-[200px]"
+            className="min-w-[220px]"
           >
             Agendar reunión
-          </ButtonLink>
-          <ButtonLink
-            href="#evaluacion-psicolaboral"
-            variant="secondary"
-            size="lg"
-            className="min-w-[200px]"
-          >
-            Ver evaluación psicolaboral
           </ButtonLink>
         </div>
       </div>
@@ -371,69 +355,32 @@ function EvaluacionPsicolaboralSection() {
             </p>
           </div>
           <ul className="mt-10 grid auto-rows-fr grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
-            {suiteCategories.map((category) => (
-              <li key={category.title}>
-                <BentoCard>
-                  <h4 className="text-lg font-semibold text-white">
-                    {category.title}
-                  </h4>
-                  <ul className="mt-4 flex flex-wrap gap-2">
-                    {category.tests.map((test) => (
-                      <DarkChip key={test}>{test}</DarkChip>
-                    ))}
-                  </ul>
-                </BentoCard>
-              </li>
-            ))}
+            {suiteCategories.map((category, index) => {
+              const accent = pastelAccents[index % pastelAccents.length];
+              return (
+                <li key={category.title}>
+                  <BentoCard>
+                    <h4 className="flex items-center gap-2.5 text-lg font-semibold text-white">
+                      <span
+                        className="size-2 shrink-0 rounded-full"
+                        style={{
+                          backgroundColor: accent,
+                          boxShadow: `0 0 8px 0 ${accent}`,
+                        }}
+                        aria-hidden
+                      />
+                      {category.title}
+                    </h4>
+                    <ul className="mt-4 flex flex-wrap gap-2">
+                      {category.tests.map((test) => (
+                        <DarkChip key={test}>{test}</DarkChip>
+                      ))}
+                    </ul>
+                  </BentoCard>
+                </li>
+              );
+            })}
           </ul>
-
-          {/* Detalle: personalización pastel con glow */}
-          <div className="mt-6">
-            <BentoCard>
-              <div className="flex items-start gap-4">
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-sky-400/85">
-                  <Palette className="size-5" strokeWidth={1.25} aria-hidden />
-                </div>
-                <div className="min-w-0">
-                  <h4 className="text-base font-semibold text-white">
-                    Personalización Pastel{" "}
-                    <span className="font-normal text-zinc-400">
-                      (Ajustes de Usuario)
-                    </span>
-                  </h4>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-400">
-                    El usuario puede conmutar el acento principal a 7 variantes
-                    pastel. Cambian la variable{" "}
-                    <code className="rounded bg-white/[0.06] px-1.5 py-0.5 font-mono text-[0.8em] text-sky-200/90">
-                      --primary
-                    </code>{" "}
-                    y el sidebar de forma segura, manteniendo el background
-                    intacto.
-                  </p>
-                  <ul className="mt-5 flex flex-wrap gap-2.5">
-                    {pastelVariants.map((variant) => (
-                      <li
-                        key={variant.name}
-                        className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] py-1.5 pl-2 pr-3 text-sm text-zinc-300 transition-colors hover:border-white/25"
-                      >
-                        <span
-                          className="size-3.5 rounded-full"
-                          style={{
-                            backgroundColor: variant.color,
-                            boxShadow: `0 0 10px 1px ${variant.color}, 0 0 2px 0 ${variant.color}`,
-                          }}
-                          aria-hidden
-                        />
-                        <code className="font-mono text-[0.85em]">
-                          {variant.name}
-                        </code>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </BentoCard>
-          </div>
         </div>
 
         {/* Niveles de profundidad */}

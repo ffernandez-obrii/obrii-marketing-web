@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   title:
     "Servicios de Headhunting y Evaluación Psicolaboral | Obrii Consulting",
   description:
-    "Soluciones de talento de alto estándar en Chile y Latinoamérica. Reclutamiento B2B, headhunting de precisión y evaluación psicolaboral por competencias con suite psicométrica propia (Obrii App) y entrega en 48 horas.",
+    "Soluciones premium de Headhunting B2B y Evaluación Psicolaboral de precisión en Chile y LATAM. Unimos la psicología organizacional con análisis de datos para decisiones sin margen de error.",
   alternates: {
     canonical: "/servicios",
   },
@@ -44,20 +44,20 @@ export const metadata: Metadata = {
     title:
       "Servicios de Headhunting y Evaluación Psicolaboral | Obrii Consulting",
     description:
-      "Atracción y evaluación de perfiles críticos sin margen para el error, con rigor metodológico y cobertura en todo LATAM.",
+      "Atracción, evaluación de perfiles críticos y headhunting B2B de ciclo completo. Garantía de permanencia y rigor psicolaboral.",
     images: ["/dashboard-obrii.jpg"],
   },
 };
 
 /* ------------------------------------------------------------------ */
-/* Datos del servicio principal: Evaluación Psicolaboral de Precisión  */
+/* Datos de los Servicios                                             */
 /* ------------------------------------------------------------------ */
 
 const methodologyPoints: { icon: LucideIcon; label: string; text: string }[] = [
   {
     icon: Calendar,
     label: "Sin carga para tu equipo",
-    text: "Obrii asume la gestión directa de agenda con el candidato. Tu equipo únicamente proveer los datos de contacto iniciales.",
+    text: "Obrii asume la gestión directa de agenda con el candidato. Tu equipo únicamente debe proveer los datos de contacto iniciales.",
   },
   {
     icon: MessageSquareText,
@@ -132,7 +132,7 @@ const depthTiers: {
     name: "Jefatura",
     badge: "Premium",
     description:
-      "Diseñado para roles estratégicos. Incluye por defecto el chequeo exhaustivo de referencias laborales para asegurar el Person-Organization Fit (P-O Fit).",
+      "Diseñado para roles estratégicos de liderazgo. Incluye por defecto el chequeo exhaustivo de referencias laborales para asegurar el Person-Organization Fit (P-O Fit).",
     priceUf: "23 UF",
     priceUsd: "$880 USD",
     highlighted: true,
@@ -142,7 +142,7 @@ const depthTiers: {
     name: "Profesional",
     badge: "Especialización",
     description:
-      "Foco en competencias de alta especialización técnica y gestión. (Referencias laborales disponibles como Add-on).",
+      "Foco en competencias de alta especialización técnica y gestión comercial u operativa. (Referencias laborales disponibles como Add-on).",
     priceUf: "17,85 UF",
     priceUsd: "$660 USD",
   },
@@ -151,7 +151,7 @@ const depthTiers: {
     name: "Administrativo / Técnico",
     badge: "Operativo",
     description:
-      "Orientado a la eficiencia operativa y ajuste procedimental. (Referencias laborales disponibles como Add-on).",
+      "Orientado a la eficiencia operativa, ajuste procedimental y soporte técnico de procesos. (Referencias laborales disponibles como Add-on).",
     priceUf: "11,9 UF",
     priceUsd: "$440 USD",
   },
@@ -190,15 +190,15 @@ export default function ServiciosPage() {
           <HeroAtmosphere />
         </div>
         <div className="relative z-[1] flex flex-1 flex-col">
-          {/* 1 · Claro */}
+          {/* 1 · Claro: Hero & Overview */}
           <HeroSection />
-          {/* 2 · Oscuro (Obrii navy + glow) */}
+          {/* 2 · Oscuro: Evaluacion Psicolaboral */}
           <EvaluacionPsicolaboralSection />
-          {/* 3 · Claro (Headhunting Activo) */}
+          {/* 3 · Claro: Headhunting Activo y Tarifas */}
           <HeadhuntingSection />
-          {/* 4 · Claro (cercano) */}
+          {/* 4 · Claro: Próximamente (cercano) */}
           <UpcomingSection />
-          {/* 5 · Oscuro (cierre) */}
+          {/* 5 · Oscuro: Cierre */}
           <ClosingCta />
         </div>
       </main>
@@ -243,29 +243,97 @@ function DarkChip({ children }: { children: ReactNode }) {
 
 function HeroSection() {
   return (
-    <section className="relative flex min-h-[80vh] items-center border-b border-zinc-200/80 px-6 py-24 sm:px-10 sm:py-28 lg:px-12 lg:py-32">
-      <div className="relative mx-auto w-full max-w-4xl text-center">
+    <section className="relative border-b border-zinc-200/80 px-6 py-24 sm:px-10 sm:py-28 lg:px-12 lg:py-32">
+      <div className="relative mx-auto w-full max-w-6xl text-center">
         <span className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-background/80 px-4 py-1.5 text-xs font-semibold tracking-wide text-foreground/80 backdrop-blur-sm">
           <Sparkles className="size-3.5 text-primary" aria-hidden />
           Psicología Organizacional y Datos para Contratar sin Margen de Error
         </span>
         <h1 className="mt-7 text-balance font-sans text-4xl font-bold tracking-tight text-primary sm:text-5xl lg:text-[3.5rem] lg:leading-[1.05] [text-shadow:0_0_0_1px_hsl(var(--primary)/0.28),0_14px_50px_-18px_hsl(var(--primary)/0.45)]">
-          Servicios de Atracción y Evaluación de Talento
+          Servicios de Atracción, Headhunting y Selección
         </h1>
         <p className="mx-auto mt-7 max-w-3xl text-lg leading-relaxed text-foreground/70 text-pretty sm:text-xl font-medium">
           Consultora especializada en la selección de capital humano para organizaciones que necesitan contratar bien, sin margen para el error. Unimos el rigor de la psicología organizacional con análisis de datos para asegurar procesos transparentes, ágiles y basados en el mérito.
         </p>
-        <div className="mt-10 flex justify-center">
-          <ButtonLink
-            href={AGENDAR_ASESORIA_URL}
-            variant="primary"
-            size="lg"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="min-w-[220px]"
-          >
-            Agendar reunión
-          </ButtonLink>
+
+        {/* ------------------------------------------------------------------ */}
+        {/* SERVICIOS OVERVIEW (Ir de lo general a lo particular)            */}
+        {/* ------------------------------------------------------------------ */}
+        <div className="mt-20 text-left border-t border-zinc-200/80 pt-16">
+          <div className="text-center mb-12">
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-primary">
+              SERVICIOS
+            </h2>
+            <p className="mt-2 text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl">
+              Nuestras Soluciones de Reclutamiento y Headhunting
+            </p>
+            <p className="mt-3 text-sm text-zinc-500">
+              Explora nuestra gama de soluciones orientadas a la precisión e idoneidad del talento.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {/* Card 1: Evaluación Psicolaboral */}
+            <a
+              href="#evaluacion-psicolaboral"
+              className="group relative flex flex-col rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-md"
+            >
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <BrainCircuit className="size-5" />
+              </div>
+              <h3 className="mt-4 text-lg font-bold text-zinc-950 group-hover:text-primary transition-colors">
+                Evaluación Psicolaboral
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-600 flex-1">
+                Validación de candidatos finalistas con pruebas psicométricas avanzadas en Obrii App y entrevistas de validez empírica (STAR/BEI) con SLA de 48h.
+              </p>
+              <div className="mt-6 flex items-center gap-1 text-sm font-semibold text-primary">
+                Ver detalle del servicio
+                <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </div>
+            </a>
+
+            {/* Card 2: Headhunting B2B */}
+            <a
+              href="#headhunting"
+              className="group relative flex flex-col rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-md"
+            >
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <Target className="size-5" />
+              </div>
+              <h3 className="mt-4 text-lg font-bold text-zinc-950 group-hover:text-primary transition-colors">
+                Headhunting B2B
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-600 flex-1">
+                Búsqueda proactiva, mapeo de mercado y reclutamiento integral de perfiles críticos bajo estricto estándar metodológico y con garantía de permanencia.
+              </p>
+              <div className="mt-6 flex items-center gap-1 text-sm font-semibold text-primary">
+                Ver detalle del servicio
+                <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </div>
+            </a>
+
+            {/* Card 3: Diagnóstico Organizacional (Próximamente) */}
+            <div className="relative flex flex-col rounded-2xl border border-zinc-200 bg-zinc-50/50 p-6 shadow-sm">
+              <div className="flex items-center justify-between">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-200 text-zinc-500">
+                  <Globe2 className="size-5" />
+                </div>
+                <span className="rounded-full bg-zinc-200/80 px-2.5 py-0.5 text-xs font-semibold text-zinc-600">
+                  Próximamente
+                </span>
+              </div>
+              <h3 className="mt-4 text-lg font-bold text-zinc-400">
+                Diagnóstico Organizacional
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-500 flex-1">
+                Lectura estructurada de clima, cultura y riesgos psicosociales para anticipar la rotación y fortalecer el desempeño de tus equipos.
+              </p>
+              <div className="mt-6 text-xs font-medium text-zinc-400 italic">
+                Servicio en configuración
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -302,8 +370,8 @@ function EvaluacionPsicolaboralSection() {
           >
             Evaluación Psicolaboral de Precisión
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-pretty leading-relaxed text-zinc-400">
-            Validación rigurosa de candidatos finalistas por competencias: decisión objetiva, respaldada con datos y totalmente enfocada en mitigar riesgos de contratación.
+          <p className="mx-auto mt-6 max-w-2xl text-pretty leading-relaxed text-zinc-400 font-medium">
+            Validación de competencias y rigor metodológico para finalistas que no pueden fallar: decisiones transparentes apoyadas por evidencia científica y trazabilidad completa.
           </p>
         </div>
 
@@ -445,70 +513,6 @@ function EvaluacionPsicolaboralSection() {
           </ul>
         </div>
 
-        {/* Niveles de profundidad con precios */}
-        <div className="mt-20">
-          <div className="mx-auto max-w-3xl text-center">
-            <h3 className="font-sans text-xl font-semibold tracking-tight text-white sm:text-2xl">
-              Niveles y Valores del Servicio
-            </h3>
-            <p className="mt-3 text-zinc-400">
-              Adaptamos el rigor de la evaluación según el nivel de responsabilidad del cargo, con transparencia de tarifas.
-            </p>
-          </div>
-          <ul className="mt-10 grid auto-rows-fr grid-cols-1 gap-5 lg:grid-cols-3 md:gap-6">
-            {depthTiers.map((tier) => {
-              const Icon = tier.icon;
-              return (
-                <li key={tier.name}>
-                  <BentoCard
-                    className={
-                      tier.highlighted
-                        ? "border-primary/40 shadow-[0_24px_48px_-28px_hsl(var(--primary)/0.35)]"
-                        : ""
-                    }
-                  >
-                    <div className="flex items-center justify-between gap-3">
-                      <Icon
-                        className="size-9 shrink-0 text-sky-400/85"
-                        strokeWidth={1.25}
-                        aria-hidden
-                      />
-                      <span
-                        className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${
-                          tier.highlighted
-                            ? "bg-primary text-primary-foreground shadow-[0_0_18px_-2px_hsl(var(--primary)/0.7)]"
-                            : "border border-white/10 bg-white/[0.04] text-zinc-300"
-                        }`}
-                      >
-                        {tier.badge}
-                      </span>
-                    </div>
-                    <div className="mt-6 flex flex-col border-b border-white/10 pb-4">
-                      <h4 className="text-xl font-bold text-white">
-                        {tier.name}
-                      </h4>
-                      <div className="mt-2 flex items-baseline gap-2">
-                        <span className="text-2xl font-extrabold text-sky-300">
-                          {tier.priceUf}
-                        </span>
-                        <span className="text-xs font-medium text-zinc-500">
-                          + 19% IVA
-                        </span>
-                      </div>
-                      <span className="mt-0.5 text-xs text-zinc-400">
-                        Valor referencial: {tier.priceUsd}
-                      </span>
-                    </div>
-                    <p className="mt-4 flex-1 text-sm leading-relaxed text-zinc-400">
-                      {tier.description}
-                    </p>
-                  </BentoCard>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-
         {/* CTA de contacto + descarga */}
         <div className="mt-16">
           <BentoCard className="border-primary/30">
@@ -580,42 +584,42 @@ function HeadhuntingSection() {
     {
       num: "01",
       title: "Levantamiento de Perfil",
-      desc: "Definición técnica exhaustiva de competencias, requisitos académicos/técnicos y fit cultural.",
+      desc: "Definición técnica exhaustiva de competencias, requisitos del cargo y fit de cultura organizacional.",
     },
     {
       num: "02",
       title: "Publicación y Reclutamiento",
-      desc: "Difusión en portales premium y ejecución de búsqueda directa (direct sourcing) de talento pasivo clave.",
+      desc: "Difusión en portales especializados y ejecución activa de headhunting directo de talento pasivo relevante.",
     },
     {
       num: "03",
       title: "Preselección de Candidatos",
-      desc: "Filtro curricular exhaustivo que alinea las aptitudes y expectativas con los requerimientos corporativos.",
+      desc: "Filtro curricular minucioso comparando la trayectoria y expectativas con el perfil de tu empresa.",
     },
     {
       num: "04",
       title: "Evaluación Psicolaboral",
-      desc: "Aplicación de test psicométricos validados mediante Obrii App y entrevistas por competencias basadas en STAR.",
+      desc: "Aplicación de test psicométricos predictivos de Obrii App y entrevistas por competencias basadas en STAR.",
     },
     {
       num: "05",
       title: "Validación de Referencias",
-      desc: "Verificación y auditoría minuciosa de la trayectoria profesional y fit laboral con jefaturas previas.",
+      desc: "Verificación y auditoría minuciosa del desempeño y fit ético directamente con jefaturas previas.",
     },
     {
       num: "06",
-      title: "Informe e Indicadores",
-      desc: "Entrega estructurada del Reporte Ejecutivo, Dashboard comparativo y reporte de encaje técnico en 48 horas.",
+      title: "Informe Técnico de Ajuste",
+      desc: "Generación de Informe Ejecutivo, Dashboard comparativo y análisis de encaje en el puesto.",
     },
     {
       num: "07",
-      title: "Presentación de Terna",
-      desc: "Exposición guiada de la terna de candidatos finalistas calificados ante el comité directivo o cliente.",
+      title: "Presentación de Candidatos",
+      desc: "Exposición guiada de la terna finalista altamente calificada ante el comité directivo o de selección.",
     },
     {
       num: "08",
-      title: "Selección Final y Acompañamiento",
-      desc: "Soporte activo en el cierre de la contratación, garantía de permanencia y onboarding de integración exitosa.",
+      title: "Selección Final y Onboarding",
+      desc: "Soporte activo en el cierre del proceso, onboarding de integración y garantía de permanencia.",
     },
   ];
 
@@ -635,16 +639,16 @@ function HeadhuntingSection() {
         <div className="mx-auto max-w-3xl text-center">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary backdrop-blur-sm">
             <Target className="size-3.5" aria-hidden />
-            Servicio de Selección Completa
+            Búsqueda Directa
           </span>
           <h2
             id="headhunting-heading"
             className="mt-6 text-balance font-sans text-3xl font-bold tracking-tight text-zinc-950 sm:text-4xl"
           >
-            Headhunting B2B de Ciclo Completo
+            Servicio de Reclutamiento y Headhunting B2B
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-pretty leading-relaxed text-zinc-600 font-medium">
-            Búsqueda activa y directa para perfiles críticos que garantizan la continuidad de tu negocio, aplicando el mismo rigor metodológico en cada etapa del camino.
+            Búsqueda directa del mejor talento pasivo del mercado y selección integral para roles críticos, con el mismo rigor psicolaboral en cada etapa para garantizar la permanencia del candidato.
           </p>
         </div>
 
@@ -652,10 +656,10 @@ function HeadhuntingSection() {
         <div className="mt-20">
           <div className="text-center">
             <h3 className="font-sans text-xl font-bold text-zinc-900 sm:text-2xl">
-              Etapas del Proceso de Atracción de Talento
+              Etapas de Nuestro Proceso de Headhunting
             </h3>
             <p className="mt-2 text-sm text-zinc-500">
-              Un flujo de trabajo ordenado, riguroso y transparente
+              Un flujo de trabajo ordenado de atracción de talento y selección de precisión.
             </p>
           </div>
 
@@ -682,6 +686,73 @@ function HeadhuntingSection() {
           </div>
         </div>
 
+        {/* ------------------------------------------------------------------ */}
+        {/* Niveles y Valores del Servicio (Pricing Table)                     */}
+        {/* ------------------------------------------------------------------ */}
+        <div className="mt-24 border-t border-zinc-200 pt-16">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-3.5 py-1 text-xs font-semibold text-primary">
+              Tarifas Transparentes
+            </span>
+            <h3 className="mt-4 font-sans text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl">
+              Niveles y Valores del Servicio de Headhunting
+            </h3>
+            <p className="mt-3 text-zinc-600">
+              Adaptamos la profundidad y alcance del headhunting según el nivel de responsabilidad del cargo, asegurando un proceso transparente y sin margen de error.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {depthTiers.map((tier) => {
+              const Icon = tier.icon;
+              return (
+                <div
+                  key={tier.name}
+                  className={`group relative flex flex-col rounded-2xl border p-6 bg-white shadow-sm transition-all duration-300 ${
+                    tier.highlighted
+                      ? "border-primary/50 ring-1 ring-primary/20 shadow-md md:scale-105"
+                      : "border-zinc-200 hover:border-primary/30"
+                  }`}
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                      <Icon className="size-5" />
+                    </div>
+                    <span
+                      className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${
+                        tier.highlighted
+                          ? "bg-primary text-white shadow-sm"
+                          : "border border-zinc-200 bg-zinc-50 text-zinc-600"
+                      }`}
+                    >
+                      {tier.badge}
+                    </span>
+                  </div>
+                  <div className="mt-6 flex flex-col border-b border-zinc-100 pb-4">
+                    <h4 className="text-xl font-bold text-zinc-950">
+                      {tier.name}
+                    </h4>
+                    <div className="mt-2 flex items-baseline gap-2">
+                      <span className="text-2xl font-extrabold text-primary">
+                        {tier.priceUf}
+                      </span>
+                      <span className="text-xs font-medium text-zinc-500">
+                        + 19% IVA
+                      </span>
+                    </div>
+                    <span className="mt-0.5 text-xs text-zinc-500">
+                      Valor referencial: {tier.priceUsd}
+                    </span>
+                  </div>
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-zinc-600">
+                    {tier.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
         {/* Ventajas competitivas de Headhunting */}
         <div className="mt-20 rounded-2xl border border-zinc-200 bg-zinc-50/40 p-8 sm:p-10">
           <div className="grid gap-8 lg:grid-cols-3">
@@ -690,7 +761,7 @@ function HeadhuntingSection() {
                 Garantías Obrii
               </span>
               <h3 className="mt-2 font-sans text-xl font-bold text-zinc-900">
-                ¿Por qué confiar tu reclutamiento y headhunting a Obrii?
+                ¿Por qué confiar tu headhunting y selección a Obrii?
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-zinc-600">
                 Diseñamos un pipeline de atracción de talento a medida que no depende de la postulación espontánea. Llegamos al candidato pasivo ideal y lo evaluamos bajo un estándar psicológico excepcional.
@@ -784,7 +855,10 @@ function HeadhuntingSection() {
 
 function UpcomingSection() {
   return (
-    <section className="bg-zinc-50/80 px-6 py-20 sm:px-10 lg:px-12 lg:py-24">
+    <section
+      id="diagnostico-organizacional"
+      className="scroll-mt-24 bg-zinc-50/80 px-6 py-20 sm:px-10 lg:px-12 lg:py-24"
+    >
       <PageContainer>
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-primary">
@@ -802,15 +876,14 @@ function UpcomingSection() {
           {upcomingServices.map((service) => (
             <article
               key={service.id}
-              id={service.id}
-              className="flex scroll-mt-24 flex-col rounded-2xl border border-zinc-200/90 bg-white p-8 shadow-sm"
+              className="flex flex-col rounded-2xl border border-zinc-200/90 bg-white p-8 shadow-sm"
             >
               <div className="flex items-center gap-3">
-                <span className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs font-medium text-zinc-500">
+                <span className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs font-semibold text-zinc-500">
                   Próximamente
                 </span>
               </div>
-              <h3 className="mt-4 text-xl font-semibold text-zinc-900">
+              <h3 className="mt-4 text-xl font-bold text-zinc-950">
                 {service.title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-zinc-600">
